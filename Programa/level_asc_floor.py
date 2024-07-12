@@ -6,15 +6,18 @@ from sklearn.metrics import r2_score
 
 class DeckBuilder:
     def __init__(self):
+        self.character = None
         self.initial_cards = []
         self.relics = []
+        self.max_hp = 0
+        self.battle_hp = 0
 
     def add_initial_cards(self):
         cards = input("Introduce las cartas iniciales separadas por comas: ")
         self.initial_cards = [card.strip() for card in cards.split(',')]
         print(f"Cartas iniciales: {self.initial_cards}")
 
-    def add_relics(self):
+    def add_initial_relics(self):
         relics = input("Introduce las reliquias separadas por comas: ")
         self.relics = [relic.strip() for relic in relics.split(',')]
         print(f"Reliquias: {self.relics}")
@@ -30,12 +33,15 @@ class DeckBuilder:
             print(f"Predicción {i + 1}: {predicted_deck}")
 
 def load_model():
+
     model = joblib.load('Proyecto Final\Data_Science_Proyect\Programa\extra_trees_regresor_model.pkl')
     return model
 
 def main():
     deck_builder = DeckBuilder()
     model = load_model()
+
+    choice = input("Select a character (1/2/3/4): ").strip()
 
     while True:
         print("\nMenú:")
@@ -49,7 +55,7 @@ def main():
         if choice == '1':
             deck_builder.add_initial_cards()
         elif choice == '2':
-            deck_builder.add_relics()
+            deck_builder.add_initial_relics()
         elif choice == '3':
             deck_builder.predict_cards()
         elif choice == '4':
