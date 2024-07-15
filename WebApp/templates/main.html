@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ character['name'] }} - Details</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>{{ character['name'] }}</h1>
+    <p>Max HP: {{ character['max_hp'] }}</p>
+    <p>Initial Relic: {{ character['initial_relic'] }}</p>
+
+    <h2>Initial Cards:</h2>
+    <ul>
+        {% for card in character['initial_cards'] %}
+            <li>{{ card }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Card Predictor:</h2>
+    <div>
+        <input type="text" id="cardSearch" placeholder="Search card..." oninput="searchCard()">
+        <div id="cardResults"></div>
+    </div>
+
+    <h2>Relic Predictor:</h2>
+    <div>
+        <input type="text" id="relicSearch" placeholder="Search relic..." oninput="searchRelic()">
+        <div id="relicResults"></div>
+    </div>
+
+    <script>
+        function searchCard() {
+            const query = document.getElementById('cardSearch').value;
+            fetch(`/search_card?query=${query}`)
+                .then(response => response.json())
+                .then(data => {
+                    const resultsDiv = document.getElementById('cardResults');
+                    resultsDiv.innerHTML = '';
+                    data.forEach(card => {
+                        const cardDiv = document.createElement('div');
+                        cardDiv.innerHTML = `
+                            <img src="${card.image}" alt="${card.name}">
+                            <p>${card.name}</p>
+                            <p>Score: ${card.score}</p>
+                        `;
+                        resultsDiv.appendChild(cardDiv);
+                    });
+                });
+        }
+
+        function searchRelic() {
+            const query = document.getElementById('relicSearch').value;
+            fetch(`/search_relic?query=${query}`)
+                .then(response => response.json())
+                .then(data => {
+                    const resultsDiv = document.getElementById('relicResults');
+                    resultsDiv.innerHTML = '';
+                    data.forEach(relic => {
+                        const relicDiv = document.createElement('div');
+                        relicDiv.innerHTML = `
+                            <img src="${relic.image}" alt="${relic.name}">
+                            <p>${relic.name}</p>
+                            <p>Score: ${relic.score}</p>
+                        `;
+                        resultsDiv.appendChild(relicDiv);
+                    });
+                });
+        }
+    </script>
+</body>
+</html>

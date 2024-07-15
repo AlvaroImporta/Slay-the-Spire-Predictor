@@ -1,41 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mejor Opción</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>Choose your character</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <div class="container mt-5">
-        <h1 class="text-center">Introduce 3 Opciones</h1>
-        <form method="POST" class="mt-4">
-            <div class="form-group">
-                <label for="opcion1">Opción 1:</label>
-                <input type="text" id="opcion1" name="opcion1" class="form-control" required>
-            </div>
-            <div class="form-group">
-                <label for="opcion2">Opción 2:</label>
-                <input type="text" id="opcion2" name="opcion2" class="form-control" required>
-            </div>
-            <div class="form-group">
-                <label for="opcion3">Opción 3:</label>
-                <input type="text" id="opcion3" name="opcion3" class="form-control" required>
-            </div>
-            <button type="submit" class="btn btn-primary btn-block">Enviar</button>
-        </form>
-        
-        {% if mejor_opcion %}
-            <div class="alert alert-success mt-4" role="alert">
-                La mejor opción es: {{ mejor_opcion }}
-            </div>
-        {% endif %}
+    <h1>Choose your character:</h1>
+    <div class="characters">
+        <a href="{{ url_for('character', name='Ironclad') }}">
+            <img src="https://static.wikia.nocookie.net/slay-the-spire/images/7/70/Ironclad.png" alt="Ironclad">
+            <p>The Ironclad</p>
+        </a>
+        <a href="{{ url_for('character', name='Silent') }}">
+            <img src="https://static.wikia.nocookie.net/slay-the-spire/images/a/ac/Silent.png" alt="Silent">
+            <p>The Silent</p>
+        </a>
+        <a href="{{ url_for('character', name='Defect') }}">
+            <img src="https://static.wikia.nocookie.net/slay-the-spire/images/2/27/Defect.png" alt="Defect">
+            <p>The Defect</p>
+        </a>
+        <a href="{{ url_for('character', name='Watcher') }}">
+            <img src="https://static.wikia.nocookie.net/slay-the-spire/images/9/98/Watcher.png" alt="Watcher">
+            <p>The Watcher</p>
+        </a>
     </div>
-
-    <!-- Bootstrap JS and dependencies -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
+
