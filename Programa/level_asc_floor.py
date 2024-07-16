@@ -39,9 +39,12 @@ def load_model():
 
 def main():
     deck_builder = DeckBuilder()
-    model = load_model()
 
     choice = input("Select a character (1/2/3/4): ").strip()
+    print("1. Ironclad")
+    print("2. Silent")
+    print("3. Predecir cartas")
+    print("4. Salir")
 
     while True:
         print("\nMenú:")
