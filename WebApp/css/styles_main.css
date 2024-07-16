@@ -1,0 +1,104 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.container {
+    display: flex;
+    width: 90%;
+    max-width: 1200px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.left-column, .right-column {
+    padding: 20px;
+}
+
+.left-column {
+    width: 40%;
+    border-right: 1px solid #ddd;
+}
+
+.right-column {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.character-info {
+    margin-bottom: 20px;
+}
+
+.search-section {
+    margin-bottom: 20px;
+    display: flex;
+}
+
+.search-section input {
+    flex: 1;
+    padding: 5px;
+    margin-right: 10px;
+}
+
+.search-section button {
+    padding: 5px 10px;
+}
+
+.deck, .relics {
+    margin-bottom: 20px;
+}
+
+.card-list, .relic-list {
+    max-height: 150px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.card-item, .relic-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+}
+
+.card-item button, .relic-item button {
+    margin-left: 10px;
+}
+
+.card-predictor, .relic-predictor {
+    margin-bottom: 20px;
+}
+
+.card-predictor input, .relic-predictor input {
+    display: block;
+    margin-bottom: 10px;
+    padding: 5px;
+    width: calc(100% - 20px);
+}
+
+.card-image, .relic-image {
+    display: block;
+    margin-bottom: 10px;
+    width: 100%;
+    height: auto;
+}
+
+#back-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}

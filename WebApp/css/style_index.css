@@ -1,8 +1,6 @@
 html, body {
   height: 100%;
-  margin: 0;
   overflow: hidden; /* Evita el desplazamiento */
-  font-family: Papyrus, fantasy;
 }
 
 body {
@@ -12,15 +10,6 @@ body {
   background-repeat: no-repeat;
 }
 
-h1 {
-  font-family: Papyrus, fantasy;
-  color: rgb(0, 0, 0);
-  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
-  text-align: center;
-  font-size: 49px; 
-  font-weight: 700; 
-}
-
 div.container {
   background-color: transparent;
   display: flex;
@@ -28,9 +17,19 @@ div.container {
   align-items: center; /* Centra horizontalmente */
   width: 100vw;
   height: 100vh;
-  gap: 20px;
+  padding-top: 50px; /* Mueve los personajes más abajo */
   border: none;
 }
+
+div h1{
+  font-family: Papyrus, fantasy;
+  color: rgb(0, 0, 0);
+  font-weight: 700;
+  text-shadow: 3px 3px 6px rgba(255, 255, 255, 1);
+  text-align: center;
+  padding-bottom: 50px; /* Mueve el título más abajo */
+}
+
 
 div.card {
   background: transparent;
@@ -45,9 +44,24 @@ img.card-img-top {
   max-height: 70%;
   object-fit: scale-down;
   border: none;
-  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s; /* Suaviza la transición */
+  transition: transform 0.3s, box-shadow 0.3s, background-image 0.3s; /* Suaviza la transición */
 }
 
+.img_ironclad{ 
+  filter: drop-shadow(0 0 20px rgba(211, 0, 0, 0.9));
+}
+
+.img_silent{ 
+  filter: drop-shadow(0 0 20px rgba(0, 179, 68, 1));
+}
+
+.img_defect{ 
+  filter: drop-shadow(0 0 20px rgb(0, 132, 255));
+}
+
+.img_watcher{ 
+  filter: drop-shadow(0 0 20px rgba(216, 0, 205, 0.8));
+}
 
 .image-button{
   display: flex;
@@ -63,31 +77,32 @@ img.card-img-top {
 
 .card-title {
   font-family: Papyrus, fantasy;
-  color: rgb(190, 190, 190);
-  text-shadow: 2px 2px 2px rgba(31, 31, 31, 0.5);
-  opacity: 0; /* Oculta el texto inicialmente */
+  font-weight: 900;
+  color: rgb(255, 255, 255);
+  text-shadow: 4px 4px 4px rgba(0, 0, 0, 1);
+  opacity: 1; /* Oculta el texto inicialmente */
   transition: opacity 0.3s; /* Suaviza la transición */
   border: none;
 }
 
-.image-button:hover .card-title {
-  opacity: 1; /* Muestra el texto al pasar el ratón */
-}
+/* .image-button:hover .card-title {
+  opacity: 0.6; 
+} */
 
 
-img.card-img-top:hover {
-  transform: scale(1.1); /* Aumenta el tamaño al pasar el ratón */
-}
-
-.image-button:hover {
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.8); /* Halo de luz */
+.image-button:hover img.card-img-top{
+  transform: scale(1.2); /* Aumenta el tamaño al pasar el ratón */
+  opacity: 0.6;
+  filter: drop-shadow(0 0 20px rgba(211, 0, 0, 0));
 }
 
 .ironclad-button:hover {
   background-image: url("../../Machine_learning/Load_data/Web scrapping/imagenes_extra/IroncladFondo.jpeg");
   background-size: cover;
-  background-position: center;
+  background-position: right;
   background-repeat: no-repeat;
+
+  box-shadow: 0 0 20px rgba(211, 0, 0, 1); /* Halo de luz */
 }
 
 .silent-button:hover {
@@ -95,19 +110,25 @@ img.card-img-top:hover {
   background-size: cover;
   background-position: right;
   background-repeat: no-repeat;
+
+  box-shadow: 0 0 20px rgba(0, 179, 68, 1); /* Halo de luz */
 }
 
 .defect-button:hover {
   background-image: url("../../Machine_learning/Load_data/Web scrapping/imagenes_extra/DefectFondo.jpeg");
   background-size: cover;
-  background-position: left;
+  background-position: right;
   background-repeat: no-repeat;
+
+  box-shadow: 0 0 20px rgb(0, 132, 255); /* Halo de luz */
 }
 
 .watcher-button:hover {
   background-image: url("../../Machine_learning/Load_data/Web scrapping/imagenes_extra/WatcherFondo.jpeg");
   background-size: cover;
-  background-position: right;
+  background-position: center;
   background-repeat: no-repeat;
+
+  box-shadow: 0 0 20px rgba(216, 0, 205, 0.8); /* Halo de luz */
 }
 
