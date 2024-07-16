@@ -1,3 +1,5 @@
+const characters_dict = new Map();
+
 characters_dict = {
     'Ironclad': {
         'max_hp': 80,

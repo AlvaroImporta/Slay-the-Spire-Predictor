@@ -1,3 +1,5 @@
+const relics_dict = new Map();
+
 relics_dict = {
     'relic1': 'https://example.com/relic/w12312.jpg',
     'relic2': 'https://example.com/relic/346568.jpg',
