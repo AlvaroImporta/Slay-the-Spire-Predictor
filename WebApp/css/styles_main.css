@@ -1,5 +1,41 @@
-body {
+.custom-list-container {
+    width: 300px;
+    border: 1px solid #ccc;
+}
 
+.custom-list {
+    max-height: 200px; /* Adjust this height as needed */
+    overflow-y: auto;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.custom-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+.custom-list li:last-child {
+    border-bottom: none;
+}
+
+.custom-list button {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 4px 8px;
+    cursor: pointer;
+}
+
+.custom-list button:hover {
+    background-color: #e0e0e0;
+}
+
+body {
     background-image: url(../imagenes_extra/slay-spire-3140438.webp);
     background-size: cover;
     background-position: center;
@@ -10,21 +46,40 @@ body {
 
 * { 
     font-family: Papyrus, fantasy;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 208, 0);
     font-weight: 700;
-    text-shadow: 1px 2px 6px rgb(255, 255, 255);
-    /* text-align: center; */
-    /* padding-bottom: 50px;  */
+    text-shadow: 3px 3px 6px rgb(0, 0, 0);
 }
 
 div h2, div h3 {
     font-weight: 700;
 }
 
+.filter{
+    background-color: rgba(0, 0, 0, 0.8);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+}
+
+.container{
+    padding: 40px!important;
+    padding-left: 20px !important;
+    padding-right: -1px !important;
+}
+
 .objects{
     display: flex;
     flex-direction: column;
     align-items: center; /* Centra horizontalmente */
+}
+
+.buttonx{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Centra horizontalmente */
 }
 
 .card-image{
@@ -40,14 +95,35 @@ div h2, div h3 {
     justify-content: center;
 }
 
-.amarillo{
+.negro, button, #max-hp, #entering-hp, #card-search, #choose-better-relics, #clear-relics, #choose-better-cards, #clear-cards{
     font-family: Papyrus, fantasy;
-    color: rgb(255, 208, 0);
+    color: rgb(0, 0, 0);
     font-weight: 700;
-    text-shadow: 3px 3px 6px rgb(0, 0, 0);
+    text-shadow: 3px 3px 6px rgb(255, 255, 255);
 }
 
 .container{
     max-width: 1750px !important;
+}
+
+.relic-group{
+    padding-top: 30px;
+
+}
+
+.predict-card{
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.predict-relic{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
