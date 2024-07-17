@@ -12,75 +12,88 @@
 
 <body>
     <div class="container">
-    <div class="row">
-        <div class="col-3">
+        <div class="row">
+            <div class="col-3">
 
-            <div class="character-info">
-                <h2 id="character-name">Character: Ironclad</h2>
-                <p>Max HP: <span id="max-hp">80</span></p>
-                <p>Entering combat HP: <span id="entering-hp">54</span></p>
+                <div class="character-info">
+                    <h2 id="character-name" class="amarillo">Character: Ironclad</h2>
+                    <p>Max HP: <input type="number" id="max-hp" value="80"></p>
+                    <p>Curent HP: <input type="number" id="entering-hp" value="80"></p>
+                </div>
+
+                <div class="deck">
+                    <h3>Deck</h3>
+                    <div class="search-section">
+                        <input type="text" id="card-search" placeholder="Search card...">
+                        <button id="add-card" onclick="addCard()">Add</button>
+                    </div>
+                    <div class="card-list" id="card-list">
+                        <!-- Cards will be listed here -->
+                    </div>
+                </div>
+
+                <div class="relics">
+                    <h3>Relics</h3>
+                    <div class="search-section">
+                        <input type="text" id="relic-search" placeholder="Search relic...">
+                        <button id="add-relic" onclick="addRelic()">Add</button>
+                    </div>
+                    <div class="relic-list" id="relic-list">
+                        <!-- Relics will be listed here -->
+                    </div>
+                </div>
             </div>
 
-            <div class="deck">
-                <h3>Deck</h3>
-                <div class="search-section">
-                    <input type="text" id="card-search" placeholder="Search card...">
-                    <button id="add-card" onclick="addCard()">Add</button>
+            <div class="col-8">
+
+                <div class="row">
+
+                    <div class="col-4 objects">
+                        <img id="card1-image" src="/Machine_learning/Load_data/Web scrapping/imagenes_cartas/imagenes_Ironclad_Cards/Anger.jpg" alt="Card 1" class="card-image">
+                        <input type="text" id="card1-search" placeholder="Search card...">
+                        <p id="card1-prediction">0.0</p>
+
+                        <img id="relic1-image" src="/Machine_learning/Load_data/Web scrapping/imagenes_reliquias/Akabeko.jpg" alt="Relic 1" class="relic-image">
+                        <input type="text" id="relic1-search" placeholder="Search relic...">
+                        <p id="relic1-prediction">0.0</p>
+                    </div>
+
+                    <div class="col-4 objects">
+                        <img id="card2-image" src="/Machine_learning/Load_data/Web scrapping/imagenes_cartas/imagenes_Ironclad_Cards/Anger.jpg" alt="Card 2" class="card-image">
+                        <input type="text" id="card2-search" placeholder="Search card...">
+                        <p id="card2-prediction">0.0</p>
+
+                        <img id="relic2-image" src="/Machine_learning/Load_data/Web scrapping/imagenes_reliquias/Akabeko.jpg" alt="Relic 2" class="relic-image">
+                        <input type="text" id="relic2-search" placeholder="Search relic...">
+                        <p id="relic2-prediction">0.0</p>
+                    </div>
+
+                    <div class="col-4 objects">
+                        <img id="card3-image" src="/Machine_learning/Load_data/Web scrapping/imagenes_cartas/imagenes_Ironclad_Cards/Anger.jpg" alt="Card 3" class="card-image">
+                        <input type="text" id="card3-search" placeholder="Search card...">
+                        <p id="card3-prediction">0.0</p>
+
+                        <img id="relic3-image" src="/Machine_learning/Load_data/Web scrapping/imagenes_reliquias/Akabeko.jpg" alt="Relic 3" class="relic-image">
+                        <input type="text" id="relic3-search" placeholder="Search relic...">
+                        <p id="relic3-prediction">0.0</p>
+                    </div>
+
                 </div>
-                <div class="card-list" id="card-list">
-                    <!-- Cards will be listed here -->
-                </div>
+
             </div>
 
-            <div class="relics">
-                <h3>Relics</h3>
-                <div class="search-section">
-                    <input type="text" id="relic-search" placeholder="Search relic...">
-                    <button id="add-relic" onclick="addRelic()">Add</button>
-                </div>
-                <div class="relic-list" id="relic-list">
-                    <!-- Relics will be listed here -->
-                </div>
-            </div>
-        </div>
-
-        <div class="col-9">
-
-            <div class="col">
-                <div class="row-6">
-                    <div class="cards-block"></div>
-                    <input type="text" id="card1-search" placeholder="Search card...">
-                    <img id="card1-image" src="" alt="Card 1" class="card-image">
-                    <p id="card1-prediction">0.0</p>
-                    <input type="text" id="card2-search" placeholder="Search card...">
-                    <img id="card2-image" src="" alt="Card 2" class="card-image">
-                    <p id="card2-prediction">0.0</p>
-                    <input type="text" id="card3-search" placeholder="Search card...">
-                    <img id="card3-image" src="" alt="Card 3" class="card-image">
-                    <p id="card3-prediction">0.0</p>
-                </div>
-                <p id="skip-prediction">Skip: 0.0</p>
+            <div class="col-1">
+                <p id="skip-prediction" class="amarillo">Skip: 0.0</p>
                 <button id="choose-better-cards" onclick="chooseBetterCards()">Choose better</button>
                 <button id="clear-cards" onclick="clearCards()">Clear</button>
-            </div>
-            <div class="row6-6">
-                <div class="relic-predictor">
-                    <div class="relics-block"></div>
-                    <input type="text" id="relic1-search" placeholder="Search relic...">
-                    <img id="relic1-image" src="" alt="Relic 1" class="relic-image">
-                    <p id="relic1-prediction">0.0</p>
-                    <input type="text" id="relic2-search" placeholder="Search relic...">
-                    <img id="relic2-image" src="" alt="Relic 2" class="relic-image">
-                    <p id="relic2-prediction">0.0</p>
-                    <input type="text" id="relic3-search" placeholder="Search relic...">
-                    <img id="relic3-image" src="" alt="Relic 3" class="relic-image">
-                    <p id="relic3-prediction">0.0</p>
-                </div>
-                <p id="relic-skip-prediction">Skip: 0.0</p>
+
+                <p id="relic-skip-prediction" class="amarillo">Skip: 0.0</p>
                 <button id="choose-better-relics" onclick="chooseBetterRelics()">Choose better</button>
                 <button id="clear-relics" onclick="clearRelics()">Clear</button>
             </div>
+
         </div>
+
     </div>
 
     </div>
