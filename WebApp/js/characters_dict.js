@@ -3,6 +3,8 @@ const characters_dict = {
     'Ironclad': {
         'max_hp': 80,
         'model': 'extra_trees_ironclad.pkl',
+        'initial_cards': ['Strike_R','Strike_R','Strike_R','Strike_R','Strike_R', 'Defend_R','Defend_R','Defend_R','Defend_R','Bash'],
+        'initial_relic': 'Burning Blood',
         'cards': {
             'Adrenaline': 'https://static.wikia.nocookie.net/slay-the-spire/images/e/e3/Adrenaline.png',
                 'After Image': 'https://static.wikia.nocookie.net/slay-the-spire/images/7/73/AfterImage.png',
@@ -188,13 +190,13 @@ const characters_dict = {
                 'Wild Strike': 'https://static.wikia.nocookie.net/slay-the-spire/images/4/44/WildStrike.png',
                 'Wraith Form v2': 'https://static.wikia.nocookie.net/slay-the-spire/images/e/ec/WraithForm.png',
                 'Writhe': 'https://static.wikia.nocookie.net/slay-the-spire/images/6/6e/Writhe.png'
-        },
-        'initial_cards': ['Strike_R', 'Defend_R'],
-        'initial_relic': 'Burning Blood'
+        }
     },
     'Silent': {
         'max_hp': 70,
         'model': 'extra_trees_silent.pkl',
+        'initial_cards': ['Strike_G','Strike_G','Strike_G','Strike_G','Strike_G','Defend_G','Defend_G','Defend_G','Defend_G','Defend_G','Neutralize','Survivor'],
+        'initial_relic': 'Ring of the Snake',
         'cards': {'A Thousand Cuts': 'https://static.wikia.nocookie.net/slay-the-spire/images/5/52/AThousandCuts.png',
             'Accuracy': 'https://static.wikia.nocookie.net/slay-the-spire/images/4/4c/Accuracy.png',
             'Acrobatics': 'https://static.wikia.nocookie.net/slay-the-spire/images/d/db/Acrobatics.png',
@@ -349,13 +351,13 @@ const characters_dict = {
             'Well Laid Plans': 'https://static.wikia.nocookie.net/slay-the-spire/images/8/85/Well-LaidPlans.png',
             'WheelKick': 'https://static.wikia.nocookie.net/slay-the-spire/images/8/86/WheelKick.png',
             'Wraith Form v2': 'https://static.wikia.nocookie.net/slay-the-spire/images/e/ec/WraithForm.png',
-            'Writhe': 'https://static.wikia.nocookie.net/slay-the-spire/images/6/6e/Writhe.png'},
-        'initial_cards': ['Strike', 'Defend'],
-        'initial_relic': 'Ring of the Snake'
+            'Writhe': 'https://static.wikia.nocookie.net/slay-the-spire/images/6/6e/Writhe.png'}
     },
     'Defect': {
         'max_hp': 75,
         'model': 'extra_trees_defect.pkl',
+        'initial_cards': ['Strike_B','Strike_B','Strike_B','Strike_B','Defend_B','Defend_B','Defend_B','Defend_B','Zap','Dualcast'],
+        'initial_relic': 'Cracked Core',
         'cards': {'Aggregate': 'https://static.wikia.nocookie.net/slay-the-spire/images/d/dd/Aggregate.png',
             'Amplify': 'https://static.wikia.nocookie.net/slay-the-spire/images/6/6d/Amplify.png',
             'Apotheosis': 'https://static.wikia.nocookie.net/slay-the-spire/images/9/93/Apotheosis.png',
@@ -398,7 +400,6 @@ const characters_dict = {
             'Decay': 'https://static.wikia.nocookie.net/slay-the-spire/images/9/93/Decay.png',
             'Deep Breath': 'https://static.wikia.nocookie.net/slay-the-spire/images/6/62/DeepBreath.png',
             'Defend_B': 'https://static.wikia.nocookie.net/slay-the-spire/images/7/71/Defend_B.png',
-            'Defend_P': 'https://static.wikia.nocookie.net/slay-the-spire/images/c/cd/Defend_P.png',
             'Deflect': 'https://static.wikia.nocookie.net/slay-the-spire/images/2/29/Deflect.png',
             'Defragment': 'https://static.wikia.nocookie.net/slay-the-spire/images/1/19/Defragment.png',
             'DeusExMachina': 'https://static.wikia.nocookie.net/slay-the-spire/images/b/b6/DeusExMachina.png',
@@ -510,13 +511,13 @@ const characters_dict = {
             'Violence': 'https://static.wikia.nocookie.net/slay-the-spire/images/e/e4/Violence.png',
             'White Noise': 'https://static.wikia.nocookie.net/slay-the-spire/images/2/29/WhiteNoise.png',
             'Writhe': 'https://static.wikia.nocookie.net/slay-the-spire/images/6/6e/Writhe.png',
-            'Zap': 'https://static.wikia.nocookie.net/slay-the-spire/images/0/0b/Zap.png'},
-        'initial_cards': ['Strike', 'Defend'],
-        'initial_relic': 'Cracked Core'
+            'Zap': 'https://static.wikia.nocookie.net/slay-the-spire/images/0/0b/Zap.png'}
     },
     'Watcher': {
         'max_hp': 75,
         'model': 'extra_trees_watcher.pkl',
+        'initial_cards': ['Strike_P','Strike_P','Strike_P','Strike_P','Defend_P','Defend_P','Defend_P','Defend_P','Eruption', 'Vigilance','AscendersBane'],
+        'initial_relic': 'Pure Water',
         'cards': {'Alpha': 'https://static.wikia.nocookie.net/slay-the-spire/images/a/a8/Alpha.png',
             'Apotheosis': 'https://static.wikia.nocookie.net/slay-the-spire/images/9/93/Apotheosis.png',
             'AscendersBane': 'https://static.wikia.nocookie.net/slay-the-spire/images/a/a0/Ascender%27s_Bane.png',
@@ -637,8 +638,6 @@ const characters_dict = {
             'Wish': 'https://static.wikia.nocookie.net/slay-the-spire/images/f/f3/Wish.png',
             'Worship': 'https://static.wikia.nocookie.net/slay-the-spire/images/d/d4/Worship.png',
             'WreathOfFlame': 'https://static.wikia.nocookie.net/slay-the-spire/images/d/d8/WreathofFlame.png',
-            'Writhe': 'https://static.wikia.nocookie.net/slay-the-spire/images/6/6e/Writhe.png'},
-        'initial_cards': ['Strike', 'Defend'],
-        'initial_relic': 'Pure Water'
+            'Writhe': 'https://static.wikia.nocookie.net/slay-the-spire/images/6/6e/Writhe.png'}
     }
 }

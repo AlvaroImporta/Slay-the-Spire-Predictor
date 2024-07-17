@@ -3,14 +3,23 @@ function Redirect(url) {
     window.location.href = url;
 }
 
-function GetCharacter(character) {
-    const character =  window.location.search = `?char=${character}`;
+function GetCharacter() {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get('char');
 }
 
-
-document.getElementById('character-name').textContent = `Character: Ironclad`;
-document.getElementById('max-hp').textContent = character.max_hp;
-document.getElementById('entering-hp').textContent = 54; // Assuming initial entering combat HP is always 54
+function LoadCharacterData() {
+    const character = GetCharacter();
+    const character_data = characters_dict[character];
+    document.getElementById('character-name').textContent = `Character: ${character_data.name}`;
+    document.getElementById('max-hp').textContent = character_data.max_hp;
+    document.getElementById('entering-hp').textContent = character_data.max_hp;
+    document.getElementById('character-image').src = character_data.image;
+}
+const character_data = characters_dict[GetCharacter()];
+document.getElementById('character-name').textContent = `Character: ${character_data.name}`;
+document.getElementById('max-hp').textContent = character_data.max_hp;
+document.getElementById('entering-hp').textContent = character_data.max_hp; // Assuming initial entering combat HP is always 54
 
 const cardList = document.getElementById('card-list');
 const relicList = document.getElementById('relic-list');
