@@ -189,7 +189,7 @@ const characters_dict = {
                 'Wraith Form v2': 'https://static.wikia.nocookie.net/slay-the-spire/images/e/ec/WraithForm.png',
                 'Writhe': 'https://static.wikia.nocookie.net/slay-the-spire/images/6/6e/Writhe.png'
         },
-        'initial_cards': ['Strike', 'Defend'],
+        'initial_cards': ['Strike_R', 'Defend_R'],
         'initial_relic': 'Burning Blood'
     },
     'Silent': {
