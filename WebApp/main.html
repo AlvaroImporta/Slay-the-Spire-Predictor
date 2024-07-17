@@ -11,96 +11,177 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-3">
+    <div class="filter">
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
 
-                <div class="character-info">
-                    <h2 id="character-name" class="amarillo">Character: Ironclad</h2>
-                    <p>Max HP: <input type="number" id="max-hp" value="80"></p>
-                    <p>Curent HP: <input type="number" id="entering-hp" value="80"></p>
+                    <div class="character-info">
+                        <h2 id="character-name">Character: Ironclad</h2>
+                        <p>Max HP: <input type="number" id="max-hp" value="80"></p>
+                        <p>Curent HP: <input type="number" id="entering-hp" value="80"></p>
+                    </div>
+
+                    <div class="deck">
+                        <h3>Deck</h3>
+                        <div class="search-section">
+                            <input type="text" id="card-search" placeholder="Search card...">
+                            <button id="add-card" onclick="addCard()">Add</button>
+                        </div>
+                        <div class="custom-list-container">
+                            <ul class="custom-list">
+                                <li>
+                                    Item 1 <button>Button 1</button>
+                                </li>
+                                <li>
+                                    Item 2 <button>Button 2</button>
+                                </li>
+                                <li>
+                                    Item 3 <button>Button 3</button>
+                                </li>
+                                <li>
+                                    Item 4 <button>Button 4</button>
+                                </li>
+                                <li>
+                                    Item 5 <button>Button 5</button>
+                                </li>
+                                <li>
+                                    Item 6 <button>Button 6</button>
+                                </li>
+                                <li>
+                                    Item 7 <button>Button 7</button>
+                                </li>
+                                <!-- Add more items as needed -->
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="relics">
+                        <h3>Relics</h3>
+                        <div class="search-section">
+                            <input type="text" id="relic-search" placeholder="Search relic...">
+                            <button id="add-relic" onclick="addRelic()">Add</button>
+                        </div>
+                        <div class="custom-list-container">
+                            <ul class="custom-list">
+                                <li>
+                                    Item 1 <button>Button 1</button>
+                                </li>
+                                <li>
+                                    Item 2 <button>Button 2</button>
+                                </li>
+                                <li>
+                                    Item 3 <button>Button 3</button>
+                                </li>
+                                <li>
+                                    Item 4 <button>Button 4</button>
+                                </li>
+                                <li>
+                                    Item 5 <button>Button 5</button>
+                                </li>
+                                <!-- Add more items as needed -->
+                            </ul>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="deck">
-                    <h3>Deck</h3>
-                    <div class="search-section">
-                        <input type="text" id="card-search" placeholder="Search card...">
-                        <button id="add-card" onclick="addCard()">Add</button>
+                <div class="col-9">
+
+                    <div class="row card-group">
+
+                        <p id="classifier 1" class="title">Cards Predictor</p>
+
+                        <div class="col-3 objects">
+
+                            <img id="card1-image"
+                                src="/Machine_learning/Load_data/Web scrapping/imagenes_cartas/imagenes_Ironclad_Cards/Anger.jpg"
+                                alt="Card 1" class="card-image">
+                            <input type="text" id="card1-search" placeholder="Search card...">
+                            <p id="card1-prediction">0.0</p>
+                        </div>
+
+                        <div class="col-3 objects">
+                            <img id="card2-image"
+                                src="/Machine_learning/Load_data/Web scrapping/imagenes_cartas/imagenes_Ironclad_Cards/Anger.jpg"
+                                alt="Card 2" class="card-image">
+                            <input type="text" id="card2-search" placeholder="Search card...">
+                            <p id="card2-prediction">0.0</p>
+                        </div>
+
+                        <div class="col-3 objects">
+                            <img id="card3-image"
+                                src="/Machine_learning/Load_data/Web scrapping/imagenes_cartas/imagenes_Ironclad_Cards/Anger.jpg"
+                                alt="Card 3" class="card-image">
+                            <input type="text" id="card3-search" placeholder="Search card...">
+                            <p id="card3-prediction">0.0</p>
+                        </div>
+
+                        <div class="col-2 objects">
+                            <div class="predict-card">
+                                <p id="skip-prediction">Skip: 0.0</p>
+                                <button id="choose-better-cards" onclick="chooseBetterCards()">Choose better</button>
+                                <button id="clear-cards" onclick="clearCards()">Clear</button>
+                            </div>
+                        </div>
+
+                        <div class="col-1 buttonx">
+                            <button id="back-button" onclick="goBack()" class="negro">X</button>
+                        </div>
+
                     </div>
-                    <div class="card-list" id="card-list">
-                        <!-- Cards will be listed here -->
+
+                    <div class="row relic-group">
+
+                        <p id="classifier 2" class="title">Relics Predictor</p>
+
+                        <div class="col-3 objects">
+
+                            <img id="relic1-image"
+                                src="/Machine_learning/Load_data/Web scrapping/imagenes_reliquias/Akabeko.jpg"
+                                alt="Relic 1" class="relic-image">
+                            <input type="text" id="relic1-search" placeholder="Search relic...">
+                            <p id="relic1-prediction">0.0</p>
+                        </div>
+
+                        <div class="col-3 objects">
+                            <img id="relic2-image"
+                                src="/Machine_learning/Load_data/Web scrapping/imagenes_reliquias/Akabeko.jpg"
+                                alt="Relic 2" class="relic-image">
+                            <input type="text" id="relic2-search" placeholder="Search relic...">
+                            <p id="relic2-prediction">0.0</p>
+                        </div>
+
+                        <div class="col-3 objects">
+                            <img id="relic3-image"
+                                src="/Machine_learning/Load_data/Web scrapping/imagenes_reliquias/Akabeko.jpg"
+                                alt="Relic 3" class="relic-image">
+                            <input type="text" id="relic3-search" placeholder="Search relic...">
+                            <p id="relic3-prediction">0.0</p>
+                        </div>
+
+                        <div class="col-2 objects">
+                            <div class="predict-relic">
+                                <p id="relic-skip-prediction">Skip: 0.0</p>
+                                <button id="choose-better-relics" onclick="chooseBetterRelics()">Choose better</button>
+                                <button id="clear-relics" onclick="clearRelics()">Clear</button>
+                            </div>
+                        </div>
+
+                        <div class="col-1 buttonx">
+                        </div>
+
                     </div>
+
                 </div>
 
-                <div class="relics">
-                    <h3>Relics</h3>
-                    <div class="search-section">
-                        <input type="text" id="relic-search" placeholder="Search relic...">
-                        <button id="add-relic" onclick="addRelic()">Add</button>
-                    </div>
-                    <div class="relic-list" id="relic-list">
-                        <!-- Relics will be listed here -->
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-8">
-
-                <div class="row">
-
-                    <div class="col-4 objects">
-                        <img id="card1-image" src="/Machine_learning/Load_data/Web scrapping/imagenes_cartas/imagenes_Ironclad_Cards/Anger.jpg" alt="Card 1" class="card-image">
-                        <input type="text" id="card1-search" placeholder="Search card...">
-                        <p id="card1-prediction">0.0</p>
-
-                        <img id="relic1-image" src="/Machine_learning/Load_data/Web scrapping/imagenes_reliquias/Akabeko.jpg" alt="Relic 1" class="relic-image">
-                        <input type="text" id="relic1-search" placeholder="Search relic...">
-                        <p id="relic1-prediction">0.0</p>
-                    </div>
-
-                    <div class="col-4 objects">
-                        <img id="card2-image" src="/Machine_learning/Load_data/Web scrapping/imagenes_cartas/imagenes_Ironclad_Cards/Anger.jpg" alt="Card 2" class="card-image">
-                        <input type="text" id="card2-search" placeholder="Search card...">
-                        <p id="card2-prediction">0.0</p>
-
-                        <img id="relic2-image" src="/Machine_learning/Load_data/Web scrapping/imagenes_reliquias/Akabeko.jpg" alt="Relic 2" class="relic-image">
-                        <input type="text" id="relic2-search" placeholder="Search relic...">
-                        <p id="relic2-prediction">0.0</p>
-                    </div>
-
-                    <div class="col-4 objects">
-                        <img id="card3-image" src="/Machine_learning/Load_data/Web scrapping/imagenes_cartas/imagenes_Ironclad_Cards/Anger.jpg" alt="Card 3" class="card-image">
-                        <input type="text" id="card3-search" placeholder="Search card...">
-                        <p id="card3-prediction">0.0</p>
-
-                        <img id="relic3-image" src="/Machine_learning/Load_data/Web scrapping/imagenes_reliquias/Akabeko.jpg" alt="Relic 3" class="relic-image">
-                        <input type="text" id="relic3-search" placeholder="Search relic...">
-                        <p id="relic3-prediction">0.0</p>
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="col-1">
-                <p id="skip-prediction" class="amarillo">Skip: 0.0</p>
-                <button id="choose-better-cards" onclick="chooseBetterCards()">Choose better</button>
-                <button id="clear-cards" onclick="clearCards()">Clear</button>
-
-                <p id="relic-skip-prediction" class="amarillo">Skip: 0.0</p>
-                <button id="choose-better-relics" onclick="chooseBetterRelics()">Choose better</button>
-                <button id="clear-relics" onclick="clearRelics()">Clear</button>
             </div>
 
         </div>
 
     </div>
 
-    </div>
-
     <!-- <button id="back-button" onclick="goBack()">X</button> -->
 
-    </div>
     <script src="js/app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
