@@ -11,88 +11,18 @@ function GetCharacter() {
 function LoadCharacterData() {
     const character = GetCharacter();
     const character_data = characters_dict[character];
-    document.getElementById('character-name').textContent = `Character: ${character_data.name}`;
-    document.getElementById('max-hp').textContent = character_data.max_hp;
-    document.getElementById('entering-hp').textContent = character_data.max_hp;
-    document.getElementById('character-image').src = character_data.image;
-}
-const character_data = characters_dict[GetCharacter()];
-document.getElementById('character-name').textContent = `Character: ${character_data.name}`;
-document.getElementById('max-hp').textContent = character_data.max_hp;
-document.getElementById('entering-hp').textContent = character_data.max_hp; // Assuming initial entering combat HP is always 54
-
-const cardList = document.getElementById('card-list');
-const relicList = document.getElementById('relic-list');
-
-character.initial_cards.forEach(card => {
-    addCardToList(card);
-});
-
-addRelicToList(character.initial_relic);
-
-function addCard() {
-    const cardName = document.getElementById('card-search').value;
-    if (character.cards[cardName]) {
-        addCardToList(cardName);
-        document.getElementById('card-search').value = '';
-    } else {
-        alert('Card not found');
-    }
-}
-
-function addCardToList(card) {
-    const cardItem = document.createElement('div');
-    cardItem.className = 'card-item';
-    cardItem.textContent = card;
-
-    const upgradeButton = document.createElement('button');
-    upgradeButton.textContent = '↑';
-    upgradeButton.onclick = () => upgradeCard(cardItem);
-
-    const removeButton = document.createElement('button');
-    removeButton.textContent = '✗';
-    removeButton.onclick = () => removeCard(cardItem);
-
-    cardItem.appendChild(upgradeButton);
-    cardItem.appendChild(removeButton);
-
-    cardList.appendChild(cardItem);
-}
-
-function upgradeCard(cardItem) {
-    cardItem.textContent += '+1';
-}
-
-function removeCard(cardItem) {
-    cardList.removeChild(cardItem);
-}
-
-function addRelic() {
-    const relicName = document.getElementById('relic-search').value;
-    if (relics_dict[relicName]) {
-        addRelicToList(relicName);
-        document.getElementById('relic-search').value = '';
-    } else {
-        alert('Relic not found');
-    }
-}
-
-function addRelicToList(relic) {
-    const relicItem = document.createElement('div');
-    relicItem.className = 'relic-item';
-    relicItem.textContent = relic;
-
-    const removeButton = document.createElement('button');
-    removeButton.textContent = '✗';
-    removeButton.onclick = () => removeRelic(relicItem);
-
-    relicItem.appendChild(removeButton);
-
-    relicList.appendChild(relicItem);
-}
-
-function removeRelic(relicItem) {
-    relicList.removeChild(relicItem);
+    document.getElementById('character-name').innerHTML = 'Character:' + character;
+    document.getElementById('max-hp').value = character_data.max_hp;
+    document.getElementById('entering-hp').value = character_data.max_hp;
+    
+    character_data.initial_cards.forEach(card => {
+        document.getElementById('card-list').appendChild = '<li>'+card+'<button>X</button></li>';
+    });
+    // card_list.forEach(element => {
+    //     document.getElementById('card-list').appendChild = '<li>'+element+'<button>X</button></li>';
+    // });
+       
+    
 }
 
 function chooseBetterCards() {
@@ -151,9 +81,6 @@ function clearCards() {
     document.getElementById('skip-prediction').textContent = 'Skip: 0.0';
 }
 
-function chooseBetterRelics() {
-    // Similar to chooseBetterCards but for relics
-}
 
 function clearRelics() {
     document.getElementById('relic1-search').value = '';
@@ -169,8 +96,4 @@ function clearRelics() {
     document.getElementById('relic3-prediction').textContent = '0.0';
 
     document.getElementById('relic-skip-prediction').textContent = 'Skip: 0.0';
-}
-
-function goBack() {
-    window.location.href = 'character_selection.html';
 }
