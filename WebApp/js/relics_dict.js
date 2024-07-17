@@ -1,6 +1,4 @@
-const relics_dict = new Map();
-
-relics_dict = {'Akabeko': 'https://static.wikia.nocookie.net/slay-the-spire/images/4/4c/Akabeko.png',
+const relics_dict = {'Akabeko': 'https://static.wikia.nocookie.net/slay-the-spire/images/4/4c/Akabeko.png',
     'Anchor': 'https://static.wikia.nocookie.net/slay-the-spire/images/c/c0/Anchor.png',
     'Ancient Tea Set': 'https://static.wikia.nocookie.net/slay-the-spire/images/e/e6/AncientTeaSet.png',
     'Art of War': 'https://static.wikia.nocookie.net/slay-the-spire/images/b/bb/ArtofWar.png',

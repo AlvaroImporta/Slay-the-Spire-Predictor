@@ -1,10 +1,13 @@
-import characters_dict from 'characters_dict.js';
-import relics_dict from 'relics_dict.js';
+
+function Redirect(url) {
+    window.location.href = url;
+}
+
+function GetCharacter(character) {
+    const character =  window.location.search = `?char=${character}`;
+}
 
 
-
-// Initialize character data
-const character = characters_dict['Ironclad'];
 document.getElementById('character-name').textContent = `Character: Ironclad`;
 document.getElementById('max-hp').textContent = character.max_hp;
 document.getElementById('entering-hp').textContent = 54; // Assuming initial entering combat HP is always 54

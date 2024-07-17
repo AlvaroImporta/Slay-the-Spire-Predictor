@@ -11,15 +11,17 @@
 </head>
 
 <body>
+    <div class="filter">
     <div class="container">
+        <img src="imagenes_extra/Logo.png" alt="Logo" class="logo">
         <h1>Choose Your Character</h1>
 
         <div class="row row-cols-4">
 
             <div class="col">
                 <div class="card">
-                    <button class="image-button ironclad-button" onclick="alert('Botón presionado!')">
-                        <img src="../Machine_learning/Load_data/Web scrapping/imagenes_extra/Ironclad.webp"
+                    <button class="image-button ironclad-button" onclick="Redirect('main.html?char=Ironclad')">
+                        <img src="imagenes_extra/Ironclad.webp"
                             alt="Botón Imagen Ironclad" class="card-img-top img_ironclad">
                         <h5 class="card-title">Ironclad</h5>
                     </button>
@@ -28,8 +30,8 @@
             
             <div class="col">
                 <div class="card">
-                    <button class="image-button silent-button" onclick="alert('Botón presionado!')">
-                        <img src="../Machine_learning/Load_data/Web scrapping/imagenes_extra/Silent.webp"
+                    <button class="image-button silent-button" onclick="Redirect('main.html?char=Silent')">
+                        <img src="imagenes_extra/Silent.webp"
                             alt="Botón Imagen Silent" class="card-img-top img_silent">
                         <h5 class="card-title">Silent</h5>
                 </div>
@@ -37,8 +39,8 @@
 
             <div class="col">
                 <div class="card">
-                    <button class="image-button defect-button" onclick="alert('Botón presionado!')">
-                        <img src="../Machine_learning/Load_data/Web scrapping/imagenes_extra/Defect.webp"
+                    <button class="image-button defect-button" onclick="Redirect('main.html?char=Defect')">
+                        <img src="imagenes_extra/Defect.webp"
                             alt="Botón Imagen Defect" class="card-img-top img_defect">
                         <h5 class="card-title">Defect</h5>
                 </div>
@@ -46,8 +48,8 @@
 
             <div class="col">
                 <div class="card">
-                    <button class="image-button watcher-button" onclick="alert('Botón presionado!')">
-                        <img src="../Machine_learning/Load_data/Web scrapping/imagenes_extra/Watcher.webp"
+                    <button class="image-button watcher-button" onclick="Redirect('main.html?char=Watcher')">
+                        <img src="imagenes_extra/Watcher.webp"
                             alt="Botón Imagen Watcher" class="card-img-top img_watcher">
                         <h5 class="card-title">Watcher</h5>
                 </div>
@@ -59,6 +61,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
+    <script src="js/characters_dict.js"></script>
+    <script src="js/relics_dict.js"></script>
+    <script src="js/app.js"></script>
+</div>
 </body>
 
 </html>
