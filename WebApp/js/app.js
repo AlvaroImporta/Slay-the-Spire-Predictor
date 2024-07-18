@@ -23,7 +23,7 @@ function TurnOffButtons() {
     button_add_relic.disabled = true;
 }
 
-function ClearCards(){
+function clearCards(){
     document.getElementById('card1-search').value = '';
     document.getElementById('card2-search').value = '';
     document.getElementById('card3-search').value = '';
@@ -39,7 +39,7 @@ function ClearCards(){
     document.getElementById('skip-prediction').textContent = '';
 }
 
-function ClearRelics(){
+function clearRelics(){
     document.getElementById('relic1-search').value = '';
     document.getElementById('relic2-search').value = '';
     document.getElementById('relic3-search').value = '';
