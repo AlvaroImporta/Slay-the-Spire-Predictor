@@ -15,8 +15,21 @@ function LoadCharacterData() {
     document.getElementById('max-hp').value = character_data.max_hp;
     document.getElementById('entering-hp').value = character_data.max_hp;
     
+    const card_list = document.getElementById('card-list');
+    card_list.innerHTML = '';
+
     character_data.initial_cards.forEach(card => {
-        document.getElementById('card-list').appendChild = '<li>'+card+'<button>X</button></li>';
+        const li = document.createElement('li');
+        li.textContent = card;
+
+        const button = document.createElement('button');
+        button.textContent = 'X';
+        button.onclick = () => {
+            card_list.removeChild(li);
+        };
+
+        li.appendChild(button);
+        card_list.appendChild(li);
     });
     // card_list.forEach(element => {
     //     document.getElementById('card-list').appendChild = '<li>'+element+'<button>X</button></li>';
