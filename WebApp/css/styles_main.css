@@ -127,3 +127,17 @@ div h2, div h3 {
     justify-content: center;
 }
 
+div.placeholdercards{
+    height: 258px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+div.placeholderrelics{
+    height: 122px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.relics{
+    margin-top: 20px;
+}
+
