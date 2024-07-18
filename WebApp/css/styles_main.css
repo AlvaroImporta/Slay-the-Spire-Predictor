@@ -65,9 +65,7 @@ div h2, div h3 {
 }
 
 .container{
-    padding: 40px!important;
-    padding-left: 20px !important;
-    padding-right: -1px !important;
+    padding: 50px!important;
 }
 
 .objects{
@@ -114,7 +112,7 @@ div input{
 }
 
 .predict-card{
-    margin-top: 100px;
+    margin-top: 250px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -151,13 +149,35 @@ div.placeholderrelics{
     margin-top: 20px;
 }
 
+::-webkit-scrollbar { width: 9px; height: 9px;}
+::-webkit-scrollbar-button { width: 0px; height: 0px;}
+::-webkit-scrollbar-thumb { background: transparent; border: 0px none #fff; border-radius: 10px;}
+::-webkit-scrollbar-thumb:hover { background: #3d6077;}
+::-webkit-scrollbar-thumb:active { background: #8dd0d8;}
+::-webkit-scrollbar-track {background: transparent;border: 0px solid #aaa; border-radius: 5px;}
+::-webkit-scrollbar-track:hover { background: #e4e4e4;}
+::-webkit-scrollbar-track:active { background: #d2d2d2;}
+::-webkit-scrollbar-corner { background: transparent;}
+
+.suggestion-container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items:  flex-start;
+    justify-content: flex-start;
+    width: 169.069px;
+    
+}
+
 .suggestions {
     position: absolute;
-    background-color: white;
-    border: 1px solid #ccc;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 0px solid #ccc;
     z-index: 1000;
     max-height: 200px;
-    overflow-y: auto;
+    overflow-y: scroll;
+    width: 100%;
 }
 .suggestion-item {
     padding: 10px;
@@ -165,5 +185,9 @@ div.placeholderrelics{
 }
 .suggestion-item:hover {
     background-color: #eee;
+}
+
+.prediction{
+    height: 22px;
 }
 

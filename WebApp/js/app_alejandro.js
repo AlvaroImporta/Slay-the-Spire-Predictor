@@ -77,38 +77,6 @@ function updateRelicImage(relposition) {
 }
 
 //
-
-// Función para mostrar sugerencias
-function showSuggestions(cardposition) {
-    const searchInput = document.getElementById(cardposition + "-search");
-    const suggestionsDiv = document.getElementById("suggestions-" + cardposition);
-    const searchKey = searchInput.value.toLowerCase();
-
-    // Limpia las sugerencias previas
-    suggestionsDiv.innerHTML = '';
-
-    // Muestra las sugerencias
-    if (searchKey) {
-        const suggestions = Object.keys(cardImages).filter(card => card.toLowerCase().includes(searchKey));
-        suggestions.forEach(suggestion => {
-            const suggestionItem = document.createElement('div');
-            suggestionItem.classList.add('suggestion-item');
-            suggestionItem.innerText = suggestion;
-            suggestionItem.onclick = () => selectSuggestion(suggestion, cardposition);
-            suggestionsDiv.appendChild(suggestionItem);
-        });
-    }
-}
-
-// Función para manejar la selección de una sugerencia
-function selectSuggestion(suggestion, cardposition) {
-    const searchInput = document.getElementById(cardposition + "-search");
-    searchInput.value = suggestion;
-    updateCardImage(cardposition);
-    document.getElementById("suggestions-" + cardposition).innerHTML = '';
-}
-
-
 // Función para mostrar sugerencias
 function showSuggestions(cardposition) {
     const searchInput = document.getElementById(cardposition + "-search");
