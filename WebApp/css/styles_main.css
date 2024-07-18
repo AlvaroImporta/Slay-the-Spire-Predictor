@@ -83,28 +83,30 @@ div h2, div h3 {
 }
 
 .card-image{
-    width: 80%;
+    width: 70%;
 
 }
 
 .relic-image{
-    width: 45%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    width: 80%;
 }
 
-.negro, button, #max-hp, #entering-hp, #card-search, #choose-better-relics, #clear-relics, #choose-better-cards, #clear-cards{
+.negro, button, #max-hp, #entering-hp, #card-search, #choose-better-relics, #clear-relics, #choose-better-cards, #clear-cards, input{
     font-family: Papyrus, fantasy;
     color: rgb(0, 0, 0);
     font-weight: 700;
     text-shadow: 3px 3px 6px rgb(255, 255, 255);
 }
 
+div input{
+    margin: 10px;
+}
+
 .container{
     max-width: 1750px !important;
 }
+
+
 
 .relic-group{
     padding-top: 30px;
@@ -130,14 +132,38 @@ div h2, div h3 {
 div.placeholdercards{
     height: 258px;
     background-color: rgba(0, 0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 div.placeholderrelics{
     height: 122px;
     background-color: rgba(0, 0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .relics{
     margin-top: 20px;
+}
+
+.suggestions {
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    z-index: 1000;
+    max-height: 200px;
+    overflow-y: auto;
+}
+.suggestion-item {
+    padding: 10px;
+    cursor: pointer;
+}
+.suggestion-item:hover {
+    background-color: #eee;
 }
 
