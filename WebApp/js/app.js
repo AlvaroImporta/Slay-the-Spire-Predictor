@@ -8,7 +8,55 @@ function GetCharacter() {
     return urlParams.get('char');
 }
 
+const button_choose_cards = document.getElementById('choose-better-cards')
+const button_choose_relics = document.getElementById('choose-better-relics')
+const button_clear_cards = document.getElementById('clear-cards')
+const button_clear_relics = document.getElementById('clear-relics')
+const button_add_card= document.getElementById('add-card')
+const button_add_relic= document.getElementById('add-relic')
+
+
+function TurnOffButtons() {
+    button_choose_cards.disabled = true;
+    button_choose_relics.disabled = true;
+    button_add_card.disabled = true;
+    button_add_relic.disabled = true;
+}
+
+function clearCards(){
+    document.getElementById('card1-search').value = '';
+    document.getElementById('card2-search').value = '';
+    document.getElementById('card3-search').value = '';
+    document.getElementById('card1-placeholder').innerHTML = '';
+    document.getElementById('card2-placeholder').innerHTML = '';
+    document.getElementById('card3-placeholder').innerHTML = '';
+    document.getElementById('suggestions-card1').innerHTML = '';
+    document.getElementById('suggestions-card2').innerHTML = '';
+    document.getElementById('suggestions-card3').innerHTML = '';
+    document.getElementById('card1-prediction').textContent = '';
+    document.getElementById('card2-prediction').textContent = '';
+    document.getElementById('card3-prediction').textContent = '';
+    document.getElementById('skip-prediction').textContent = '';
+}
+
+function clearRelics(){
+    document.getElementById('relic1-search').value = '';
+    document.getElementById('relic2-search').value = '';
+    document.getElementById('relic3-search').value = '';
+    document.getElementById('relic1-placeholder').innerHTML = '';
+    document.getElementById('relic2-placeholder').innerHTML = '';
+    document.getElementById('relic3-placeholder').innerHTML = '';
+    document.getElementById('suggestions-relic1').innerHTML = '';
+    document.getElementById('suggestions-relic2').innerHTML = '';
+    document.getElementById('suggestions-relic3').innerHTML = '';
+    document.getElementById('relic1-prediction').textContent = '';
+    document.getElementById('relic2-prediction').textContent = '';
+    document.getElementById('relic3-prediction').textContent = '';
+    document.getElementById('relic-skip-prediction').textContent = '';
+}
+
 function LoadCharacterData() {
+
     const character = GetCharacter();
     const character_data = characters_dict[character];
     document.getElementById('character-name').innerHTML = 'Character:' + character;
@@ -58,7 +106,130 @@ function LoadCharacterData() {
     li.appendChild(button);
     relic_list.appendChild(li);
 
+    TurnOffButtons();
+
     return character_data;
+}
+
+function CheckAndToggleButtonChoose() {
+    let card1 = document.getElementById('card1');
+    let card2 = document.getElementById('card2');
+    let card3 = document.getElementById('card3');
+
+    let relic1 = document.getElementById('relic1');
+    let relic2 = document.getElementById('relic2');
+    let relic3 = document.getElementById('relic3');
+
+    if (card1 && card2 && card3) {
+        button_choose_cards.disabled = false;
+    } else {
+        button_choose_cards.disabled = true;
+    }
+
+    if (relic1 && relic2 && relic3) {
+        button_choose_relics.disabled = false;
+    } else {
+        button_choose_relics.disabled = true;
+    }
+}
+
+const observer = new MutationObserver(CheckAndToggleButtonChoose);
+const config = { childList: true, subtree: true };
+const targetNode = document.body;
+observer.observe(targetNode, config);
+
+const cardImages = LoadCharacterData().cards;
+// Función para actualizar la imagen de la carta
+function updateCardImage(cardposition) {
+    const searchInput = document.getElementById(cardposition + "-search");
+    const placeholder = document.getElementById(cardposition + "-placeholder");
+    const searchKey = searchInput.value.trim();
+    console.log(searchKey);
+
+    // Verifica si la carta existe en el diccionario de cartas
+    if (cardImages.hasOwnProperty(searchKey)) {
+        const imgSrc = cardImages[searchKey];
+
+        // Crea la nueva imagen
+        const imgElement = document.createElement("img");
+        imgElement.id = cardposition;
+        imgElement.src = imgSrc;
+        imgElement.alt = searchKey;
+        imgElement.className = "card-image";
+
+        // Reemplaza el contenido del div
+        placeholder.innerHTML = "";
+        placeholder.appendChild(imgElement);
+    } else {
+        // Si la clave no existe, muestra un mensaje de error o deja el div vacío
+        placeholder.innerHTML = "No card found.";
+    }
+}
+
+const relicImages = relics_dict;
+// Función para actualizar la imagen de la carta
+function updateRelicImage(relposition) {
+    const searchInput = document.getElementById(relposition + "-search");
+    const placeholder = document.getElementById(relposition + "-placeholder");
+    const searchKey = searchInput.value.trim();
+    console.log(searchKey);
+
+    // Verifica si la reliquia existe en el diccionario de cartas
+    if (relicImages.hasOwnProperty(searchKey)) {
+        const imgSrc = relicImages[searchKey];
+
+        // Crea la nueva imagen
+        const imgElement = document.createElement("img");
+        imgElement.id = relposition;
+        imgElement.src = imgSrc;
+        imgElement.alt = searchKey;
+        imgElement.className = "relic-image";
+
+        // Reemplaza el contenido del div
+        placeholder.innerHTML = "";
+        placeholder.appendChild(imgElement);
+    } else {
+        // Si la clave no existe, muestra un mensaje de error o deja el div vacío
+        placeholder.innerHTML = "No relic found.";
+    }
+}
+
+function showSuggestions(cardposition) {
+    const searchInput = document.getElementById(cardposition + "-search");
+    const suggestionsDiv = document.getElementById("suggestions-" + cardposition);
+    const searchKey = searchInput.value.toLowerCase();
+
+    // Limpia las sugerencias previas
+    suggestionsDiv.innerHTML = '';
+
+    // Muestra las sugerencias cartas
+    if (searchKey) {
+        let suggestions = [];
+        if (cardposition.includes("card")) {
+            suggestions = Object.keys(cardImages).filter(card => card.toLowerCase().includes(searchKey));
+        } else {
+            suggestions = Object.keys(relicImages).filter(relic => relic.toLowerCase().includes(searchKey));
+        }
+        suggestions.forEach(suggestion => {
+            const suggestionItem = document.createElement('div');
+            suggestionItem.classList.add('suggestion-item');
+            suggestionItem.innerText = suggestion;
+            suggestionItem.onclick = () => selectSuggestion(suggestion, cardposition);
+            suggestionsDiv.appendChild(suggestionItem);
+        });
+    }
+}
+
+// Función para manejar la selección de una sugerencia
+function selectSuggestion(suggestion, cardposition) {
+    const searchInput = document.getElementById(cardposition + "-search");
+    searchInput.value = suggestion;
+    if (cardposition.includes("card")) {
+        updateCardImage(cardposition);
+    } else {
+        updateRelicImage(cardposition);
+    }
+    document.getElementById("suggestions-" + cardposition).innerHTML = '';
 }
 
 
@@ -112,37 +283,4 @@ function chooseBetterCards() {
         document.getElementById('skip-prediction').textContent = `Skip: ${data[3]}`;
     })
     .catch(error => console.error('Error:', error));
-}
-
-function clearCards() {
-    document.getElementById('card1-search').value = '';
-    document.getElementById('card1-image').src = '';
-    document.getElementById('card1-prediction').textContent = '';
-    
-    document.getElementById('card2-search').value = '';
-    document.getElementById('card2-image').src = '';
-    document.getElementById('card2-prediction').textContent = '';
-    
-    document.getElementById('card3-search').value = '';
-    document.getElementById('card3-image').src = '';
-    document.getElementById('card3-prediction').textContent = '';
-
-    document.getElementById('skip-prediction').textContent = '';
-}
-
-
-function clearRelics() {
-    document.getElementById('relic1-search').value = '';
-    document.getElementById('relic1-image').src = '';
-    document.getElementById('relic1-prediction').textContent = '';
-    
-    document.getElementById('relic2-search').value = '';
-    document.getElementById('relic2-image').src = '';
-    document.getElementById('relic2-prediction').textContent = '';
-    
-    document.getElementById('relic3-search').value = '';
-    document.getElementById('relic3-image').src = '';
-    document.getElementById('relic3-prediction').textContent = '';
-
-    document.getElementById('relic-skip-prediction').textContent = '';
 }
