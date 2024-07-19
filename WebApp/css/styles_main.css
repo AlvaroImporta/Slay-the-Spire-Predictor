@@ -1,38 +1,17 @@
-.custom-list-container {
-    width: 300px;
-    border: 1px solid #ccc;
-}
 
-.custom-list {
-    max-height: 200px; /* Adjust this height as needed */
-    overflow-y: auto;
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
-}
+::-webkit-scrollbar { width: 10px; height: 4px;}
+::-webkit-scrollbar-button { width: 0px; height: 0px;}
+::-webkit-scrollbar-thumb { background: #a0811b; border: 0px none #fff; border-radius: 10px;}
+::-webkit-scrollbar-thumb:active { background: #5f3908;}
+::-webkit-scrollbar-track {background: #423100;border: 0px solid #aaa; border-radius: 5px;}
+/* ::-webkit-scrollbar-track:active { background: #d2d2d2;} */
+::-webkit-scrollbar-corner { background: transparent;}
 
-.custom-list li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 8px;
-    border-bottom: 1px solid #ddd;
-}
-
-.custom-list li:last-child {
-    border-bottom: none;
-}
-
-.custom-list button {
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    padding: 4px 8px;
-    cursor: pointer;
-}
-
-.custom-list button:hover {
-    background-color: #e0e0e0;
+* { 
+    font-family: Papyrus, fantasy;
+    color: rgb(255, 208, 0);
+    font-weight: 700;
+    text-shadow: 3px 3px 6px rgb(0, 0, 0);
 }
 
 body {
@@ -44,15 +23,15 @@ body {
     height: 100vh;
 }
 
-* { 
-    font-family: Papyrus, fantasy;
-    color: rgb(255, 208, 0);
-    font-weight: 700;
-    text-shadow: 3px 3px 6px rgb(0, 0, 0);
-}
-
 div h2, div h3 {
     font-weight: 700;
+}
+
+.negro, button, #max-hp, #entering-hp, #card-search, #choose-better-relics, #clear-relics, #choose-better-cards, #clear-cards, input{
+    font-family: Papyrus, fantasy;
+    color: rgb(0, 0, 0);
+    font-weight: 700;
+    text-shadow: 3px 3px 6px rgb(255, 255, 255);
 }
 
 .filter{
@@ -66,6 +45,50 @@ div h2, div h3 {
 
 .container{
     padding: 50px!important;
+    max-width: 1750px !important;
+}
+
+.custom-list-container {
+    width: 250px;
+    border: 1px solid #ccc;
+    width: 250px;
+    border: none;
+}
+
+.custom-list {
+    overflow-y: auto;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    height: 200px;
+    border: none !important;
+}
+
+.custom-list li {
+    /* display: flex; */
+    /* justify-content: space-between; */
+    /* align-items: center; */
+    padding: 4px;
+    /* border-bottom: 1px solid #ddd; */
+}
+
+.custom-list button {
+    float: right;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 1px;
+    padding: 2px 6px;
+    margin-right: 3px;
+    cursor: pointer;
+}
+
+.custom-list button:hover {
+    background-color: #e0e0e0;
+}
+
+
+div input{
+    margin: 10px;
 }
 
 .objects{
@@ -74,37 +97,17 @@ div h2, div h3 {
     align-items: center; /* Centra horizontalmente */
 }
 
-.buttonx{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Centra horizontalmente */
+.card-image, .interrogant-image{
+    width: 100%;
 }
 
-.card-image{
-    width: 70%;
-
+.no-relic-image{
+    width: 250%;
 }
 
 .relic-image{
     width: 80%;
 }
-
-.negro, button, #max-hp, #entering-hp, #card-search, #choose-better-relics, #clear-relics, #choose-better-cards, #clear-cards, input{
-    font-family: Papyrus, fantasy;
-    color: rgb(0, 0, 0);
-    font-weight: 700;
-    text-shadow: 3px 3px 6px rgb(255, 255, 255);
-}
-
-div input{
-    margin: 10px;
-}
-
-.container{
-    max-width: 1750px !important;
-}
-
-
 
 .relic-group{
     padding-top: 40px;
@@ -124,7 +127,7 @@ div input{
 }
 
 .predict-relic{
-    margin-top: 160px;
+    margin-top: 135px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -132,8 +135,15 @@ div input{
 }
 
 div.placeholdercards{
+    background-image: url(../imagenes_extra/nocardfound.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 243.578px, 313.984px;
+    /* opacity: 0.6; */
+    
     height: 320px;
-    background-color: rgba(0, 0, 0, 0);
+    width: 260px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -152,17 +162,6 @@ div.placeholderrelics{
 .relics{
     margin-top: 20px;
 }
-
-::-webkit-scrollbar { width: 9px; height: 9px;}
-::-webkit-scrollbar-button { width: 0px; height: 0px;}
-::-webkit-scrollbar-thumb { background: transparent; border: 0px none #fff; border-radius: 10px;}
-::-webkit-scrollbar-thumb:hover { background: #3d6077;}
-::-webkit-scrollbar-thumb:active { background: #8dd0d8;}
-::-webkit-scrollbar-track {background: transparent;border: 0px solid #aaa; border-radius: 5px;}
-::-webkit-scrollbar-track:hover { background: #e4e4e4;}
-::-webkit-scrollbar-track:active { background: #d2d2d2;}
-::-webkit-scrollbar-corner { background: transparent;}
-
 .suggestion-container{
     position: relative;
     display: flex;
@@ -193,5 +192,13 @@ div.placeholderrelics{
 
 .prediction{
     height: 22px;
+}
+
+#skip-prediction {
+    margin-top: 97px;
+}
+
+#relic-skip-prediction {
+    margin-top: 57px;
 }
 

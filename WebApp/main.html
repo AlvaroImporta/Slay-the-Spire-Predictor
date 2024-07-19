@@ -25,12 +25,15 @@
                     <div class="deck">
                         <h3>Deck</h3>
                         <div class="search-section">
-                            <input type="text" id="card-search" placeholder="Search card...">
-                            <button id="add-card" onclick="addCard()" class="negro">Add</button>
+                            <input type="text" id="card0-search" placeholder="Search card..."
+                            onkeyup="showSuggestionsList('card0'); eneableButtonAddCard()" onkeydown="eneableButtonAddCard()">
+                            <button id="add-card" onclick="addCardToList()" class="negro">Add</button>
+                            <div class="suggestion-container">
+                                <div id="suggestions-card0" class="suggestions"></div>
+                            </div>
                         </div>
                         <div class="custom-list-container">
                             <ul class="custom-list" id="card-list">
-
                             </ul>
                         </div>
                     </div>
@@ -38,12 +41,15 @@
                     <div class="relics">
                         <h3>Relics</h3>
                         <div class="search-section">
-                            <input type="text" id="relic-search" placeholder="Search relic...">
-                            <button id="add-relic" onclick="addRelic()" class="negro">Add</button>
+                            <input type="text" id="relic0-search" placeholder="Search relic..."
+                            onkeyup="showSuggestionsList('relic0'); eneableButtonAddRelic()" onkeydown="eneableButtonAddRelic()">
+                            <button id="add-relic" onclick="addRelicToList()" class="negro">Add</button>
+                            <div class="suggestion-container">
+                                <div id="suggestions-relic0" class="suggestions"></div>
+                            </div>
                         </div>
                         <div class="custom-list-container">
                             <ul class="custom-list" id="relic-list">
-
                             </ul>
                         </div>
                     </div>
@@ -55,9 +61,12 @@
 
                         <h3 id="classifier1" class="title">Cards Predictor</h3>
 
-                        <div class="col-4 objects">
+                        <div class="col-4 objects" id="card1-container">
 
-                            <div class="card1-placeholder placeholdercards" id="card1-placeholder"></div>
+                            <div class="card1-placeholder placeholdercards" id="card1-placeholder">
+                                <img id="card-interogation1" src="imagenes_extra/interrogacion_edit.png" alt="interrogation"
+                                    class="interrogant-image">
+                            </div>
                             <input type="text" id="card1-search" placeholder="Search card..."
                                 onkeyup="updateCardImage('card1'), showSuggestions('card1')">
                             <div class="suggestion-container">
@@ -66,9 +75,11 @@
                             <p id="card1-prediction" class="prediction">0.0</p>
                         </div>
 
-                        <div class="col-4 objects">
+                        <div class="col-4 objects" id="card2-container">
 
-                            <div class="card2-placeholder placeholdercards" id="card2-placeholder"></div>
+                            <div class="card2-placeholder placeholdercards" id="card2-placeholder">
+                                <img id="card-interogation1" src="imagenes_extra/interrogacion_edit.png" alt="interrogation"
+                                    class="interrogant-image"></div>
                             <input type="text" id="card2-search" placeholder="Search card..."
                                 onkeyup="updateCardImage('card2'), showSuggestions('card2')">
                             <div class="suggestion-container">
@@ -77,9 +88,11 @@
                             <p id="card2-prediction" class="prediction">0.0</p>
                         </div>
 
-                        <div class="col-4 objects">
+                        <div class="col-4 objects" id="card3-container">
 
-                            <div class="card3-placeholder placeholdercards" id="card3-placeholder"></div>
+                            <div class="card3-placeholder placeholdercards" id="card3-placeholder">
+                                <img id="card-interogation1" src="imagenes_extra/interrogacion_edit.png" alt="interrogation"
+                                    class="interrogant-image"></div>
                             <input type="text" id="card3-search" placeholder="Search card..."
                                 onkeyup="updateCardImage('card3'), showSuggestions('card3')">
                             <div class="suggestion-container">
@@ -94,9 +107,11 @@
 
                         <h3 id="classifier2" class="title">Relics Predictor</h3>
 
-                        <div class="col-4 objects">
+                        <div class="col-4 objects" id="relic1-container">
 
-                            <div class="relic1-placeholder placeholderrelics" id="relic1-placeholder"></div>
+                            <div class="relic1-placeholder placeholderrelics" id="relic1-placeholder">
+                                <img id="relic-interogation1" src="imagenes_extra/BotonSubmit.webp" alt="interrogation"
+                                    class="no-relic-image"></div>
                             <input type="text" id="relic1-search" placeholder="Search relic..."
                                 onkeyup="updateRelicImage('relic1'), showSuggestions('relic1')">
                             <div class="suggestion-container">
@@ -105,51 +120,55 @@
                             <p id="relic1-prediction" class="prediction">0.0</p>
                         </div>
 
-                        <div class="col-4 objects">
+                        <div class="col-4 objects" id="relic2-container">
 
-                            <div class="relic2-placeholder placeholderrelics" id="relic2-placeholder"></div>
+                            <div class="relic2-placeholder placeholderrelics" id="relic2-placeholder">
+                                <img id="relic-interogation2" src="imagenes_extra/BotonSubmit.webp" alt="interrogation"
+                                    class="no-relic-image"></div>
                             <input type="text" id="relic2-search" placeholder="Search relic..."
                                 onkeyup="updateRelicImage('relic2'), showSuggestions('relic2')"">
                             <div class=" suggestion-container">
-                                <div id="suggestions-relic2" class="suggestions"></div>
-                            </div>
-                            <p id="relic2-prediction" class="prediction">0.0</p>
+                            <div id="suggestions-relic2" class="suggestions"></div>
                         </div>
-
-                        <div class="col-4 objects">
-
-                            <div class="relic3-placeholder placeholderrelics" id="relic3-placeholder"></div>
-                            <input type="text" id="relic3-search" placeholder="Search relic..."
-                                onkeyup="updateRelicImage('relic3'), showSuggestions('relic3')">
-                            <div class="suggestion-container">
-                                <div id="suggestions-relic3" class="suggestions"></div>
-                            </div>
-                            <p id="relic3-prediction" class="prediction">0.0</p>
-                        </div>
-
+                        <p id="relic2-prediction" class="prediction">0.0</p>
                     </div>
 
-                </div>
+                    <div class="col-4 objects" id="relic3-container">
 
-                <div class="col-1">
-
-                        <div class="predict-card">
-                            <button id="choose-better-cards" onclick="chooseBetterCards()">Choose better</button>
-                            <button id="clear-cards" onclick="clearCards()">Clear</button>
-                            <p id="skip-prediction" class="prediction">Skip: 0.0</p>
+                        <div class="relic3-placeholder placeholderrelics" id="relic3-placeholder">
+                            <img id="relic-interogation2" src="imagenes_extra/BotonSubmit.webp" alt="interrogation"
+                                class="no-relic-image"></div>
+                        <input type="text" id="relic3-search" placeholder="Search relic..."
+                            onkeyup="updateRelicImage('relic3'), showSuggestions('relic3')">
+                        <div class="suggestion-container">
+                            <div id="suggestions-relic3" class="suggestions"></div>
                         </div>
-
-                        <div class="predict-relic">
-                            <button id="choose-better-relics" onclick="chooseBetterRelics()">Choose better</button>
-                            <button id="clear-relics" onclick="clearRelics()">Clear</button>
-                            <p id="relic-skip-prediction" class="prediction">Skip: 0.0</p>
-                        </div>
+                        <p id="relic3-prediction" class="prediction">0.0</p>
+                    </div>
 
                 </div>
 
             </div>
 
+            <div class="col-1">
+
+                <div class="predict-card">
+                    <button id="choose-better-cards" onclick="chooseBetterCards()">Choose better</button>
+                    <button id="clear-cards" onclick="clearCards()">Clear</button>
+                    <p id="skip-prediction" class="prediction">Skip: 0.0</p>
+                </div>
+
+                <div class="predict-relic">
+                    <button id="choose-better-relics" onclick="chooseBetterRelics()">Choose better</button>
+                    <button id="clear-relics" onclick="clearRelics()">Clear</button>
+                    <p id="relic-skip-prediction" class="prediction">Skip: 0.0</p>
+                </div>
+
+            </div>
+
         </div>
+
+    </div>
     </div>
 
     <script src="js/characters_dict.js"></script>
@@ -158,7 +177,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
-    
+
 </body>
 
 </html>
