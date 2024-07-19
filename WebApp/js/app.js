@@ -291,6 +291,7 @@ function chooseBetterCards() {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
+            type: type,
             character: GetCharacter(),
             max_hp: maxHP,
             entering_hp: enteringHP,
@@ -299,11 +300,63 @@ function chooseBetterCards() {
         })
     })
     .then(response => response.json())
-    .then(data => {
-        document.getElementById('card1-prediction').textContent = data[0];
-        document.getElementById('card2-prediction').textContent = data[1];
-        document.getElementById('card3-prediction').textContent = data[2];
-        document.getElementById('skip-prediction').textContent = `Skip: ${data[3]}`;
+    .then(predictions => {
+        document.getElementById('card1-prediction').textContent = predictions[0];
+        document.getElementById('card2-prediction').textContent = predictions[1];
+        document.getElementById('card3-prediction').textContent = predictions[2];
+        document.getElementById('skip-prediction').textContent = `Skip: ${predictions[3]}`;
+    })
+    .catch(error => console.error('Error:', error));
+}
+
+function chooseBetterRelics() {
+    const maxHP = document.getElementById('max-hp').value;
+    const enteringHP = document.getElementById('entering-hp').value;
+
+    const cardItems = document.querySelectorAll('.card-item');
+    const cards = []
+    cardItems.forEach(item => {
+        let textNode = item.firstChild;
+        cards.push(textNode.textContent.replace('↑✗', ''));
+    });
+
+    const relicItems = document.querySelectorAll('.relic-item');
+    const relics = []
+    relicItems.forEach(item => {
+        let textNode = item.firstChild;
+        relics.push(textNode.textContent.replace('↑✗', ''));
+    });
+
+    const relic1 = document.getElementById('relic1').alt;
+    const relic2 = document.getElementById('relic2').alt;
+    const relic3 = document.getElementById('relic3').alt;
+
+    const relicOptions = [
+        [...relics, relic1],
+        [...relics, relic2],
+        [...relics, relic3],
+        relics
+    ];
+
+    fetch('http://localhost:5000/predict', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            character: GetCharacter(),
+            max_hp: maxHP,
+            entering_hp: enteringHP,
+            relic_options: relicOptions,
+            cards: cards
+        })
+    })
+    .then(response => response.json())
+    .then(predictions => {
+        document.getElementById('relic1-prediction').textContent = predictions[0];
+        document.getElementById('relic2-prediction').textContent = predictions[1];
+        document.getElementById('relic3-prediction').textContent = predictions[2];
+        document.getElementById('relic-skip-prediction').textContent = `Skip: ${predictions[3]}`;
     })
     .catch(error => console.error('Error:', error));
 }
