@@ -48,43 +48,11 @@ function clearRelics(){
     document.getElementById('relic3-container').innerHTML = initialHTML.relic3;
 }
 
-// function clearCards(){
-//     document.getElementById('card1-search').value = '';
-//     document.getElementById('card2-search').value = '';
-//     document.getElementById('card3-search').value = '';
-//     document.getElementById('card1-placeholder').innerHTML = '';
-//     document.getElementById('card2-placeholder').innerHTML = '';
-//     document.getElementById('card3-placeholder').innerHTML = '';
-//     document.getElementById('suggestions-card1').innerHTML = '';
-//     document.getElementById('suggestions-card2').innerHTML = '';
-//     document.getElementById('suggestions-card3').innerHTML = '';
-//     document.getElementById('card1-prediction').textContent = '';
-//     document.getElementById('card2-prediction').textContent = '';
-//     document.getElementById('card3-prediction').textContent = '';
-//     document.getElementById('skip-prediction').textContent = '';
-// }
-
-// function clearRelics(){
-//     document.getElementById('relic1-search').value = '';
-//     document.getElementById('relic2-search').value = '';
-//     document.getElementById('relic3-search').value = '';
-//     document.getElementById('relic1-placeholder').innerHTML = '';
-//     document.getElementById('relic2-placeholder').innerHTML = '';
-//     document.getElementById('relic3-placeholder').innerHTML = '';
-//     document.getElementById('suggestions-relic1').innerHTML = '';
-//     document.getElementById('suggestions-relic2').innerHTML = '';
-//     document.getElementById('suggestions-relic3').innerHTML = '';
-//     document.getElementById('relic1-prediction').textContent = '';
-//     document.getElementById('relic2-prediction').textContent = '';
-//     document.getElementById('relic3-prediction').textContent = '';
-//     document.getElementById('relic-skip-prediction').textContent = '';
-// }
-
 function LoadCharacterData() {
 
     const character = GetCharacter();
     const character_data = characters_dict[character];
-    document.getElementById('character-name').innerHTML = 'Character:' + character;
+    document.getElementById('character-name').innerHTML = '<img src="'+ character_data.img+'" class="logo-char">' + character;
     document.getElementById('max-hp').value = character_data.max_hp;
     document.getElementById('entering-hp').value = character_data.max_hp;
     
@@ -98,11 +66,13 @@ function LoadCharacterData() {
 
         const button = document.createElement('button');
         button.textContent = 'X';
+        button.className = "delete-button";
         button.onclick = () => {
             card_list.removeChild(li);
         };
         const buttonlevel = document.createElement('button');
         buttonlevel.textContent = '↑';
+        buttonlevel.className = "upgrade-button";
         buttonlevel.onclick = () => {
             li.textContent = card + '+1';
             const button = document.createElement('button');
@@ -124,6 +94,7 @@ function LoadCharacterData() {
 
     const button = document.createElement('button');
     button.textContent = 'X';
+    button.className = "delete-relic";
     button.onclick = () => {
         relic_list.removeChild(li);
     };
@@ -183,6 +154,18 @@ function updateCardImage(cardposition) {
         // Reemplaza el contenido del div
         placeholder.innerHTML = "";
         placeholder.appendChild(imgElement);
+    
+    } else if (searchKey == '') {
+        if (cardposition == 'card1') {
+            document.getElementById('card1-container').innerHTML = initialHTML.card1;
+        }
+        if (cardposition == 'card2') {
+            document.getElementById('card2-container').innerHTML = initialHTML.card2;
+        }
+        if (cardposition == 'card3') {
+            document.getElementById('card3-container').innerHTML = initialHTML.card3;
+        }
+
     } else {
         // Si la clave no existe, muestra un mensaje de error o deja el div vacío
         placeholder.innerHTML = "No card found.";
@@ -210,6 +193,18 @@ function updateRelicImage(relposition) {
         // Reemplaza el contenido del div
         placeholder.innerHTML = "";
         placeholder.appendChild(imgElement);
+
+    } else if (searchKey == '') {
+        if (relposition == 'relic1') {
+            document.getElementById('relic1-container').innerHTML = initialHTML.relic1;
+        }
+        if (relposition == 'relic2') {
+            document.getElementById('relic2-container').innerHTML = initialHTML.relic2;
+        }
+        if (relposition == 'relic3') {
+            document.getElementById('relic3-container').innerHTML = initialHTML.relic3;
+        }
+
     } else {
         // Si la clave no existe, muestra un mensaje de error o deja el div vacío
         placeholder.innerHTML = "No relic found.";
@@ -432,7 +427,7 @@ function addCardToList() {
     // Crear el botón para eliminar la carta
     const removeButton = document.createElement('button');
     removeButton.textContent = 'X';
-    removeButton.className = "delete";
+    removeButton.className = "delete-button";
     removeButton.onclick = () => {
         cardList.removeChild(li);
     };
@@ -440,12 +435,12 @@ function addCardToList() {
     // Crear el botón para subir el nivel de la carta
     const levelUpButton = document.createElement('button');
     levelUpButton.textContent = '↑';
-    levelUpButton.className = "upgrade";
+    levelUpButton.className = "upgrade-button";
     levelUpButton.onclick = () => {
         li.textContent = cardSearch + '+1';
         const button = document.createElement('button');
         button.textContent = 'X';
-        button.className = "delete";
+        button.className = "delete-button";
         button.onclick = () => {
             cardList.removeChild(li);
         };
@@ -528,7 +523,7 @@ function addRelicToList() {
 
     const button = document.createElement('button');
     button.textContent = 'X';
-    button.className = "delete";
+    button.className = "delete-relic";
     button.onclick = () => {
         relicList.removeChild(li);
     };

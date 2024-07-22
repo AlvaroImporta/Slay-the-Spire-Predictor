@@ -8,11 +8,12 @@
 ::-webkit-scrollbar-corner { background: transparent;}
 
 * { 
-    font-family: Papyrus, fantasy;
-    color: rgb(255, 208, 0);
+    font-family: "Kreon", serif;
+    color: #FFEDA7;
     font-weight: 700;
-    text-shadow: 3px 3px 6px rgb(0, 0, 0);
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Kreon:wght@300..700&display=swap');
 
 body {
     background-image: url(../imagenes_extra/slay-spire-3140438.webp);
@@ -25,13 +26,14 @@ body {
 
 div h2, div h3 {
     font-weight: 700;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #442f00;
 }
 
 .negro, button, #card-search, #choose-better-relics, #clear-relics, #choose-better-cards, #clear-cards, input, button{
-    font-family: Papyrus, fantasy;
+    font-family: "Kreon", serif;
     color: rgb(0, 0, 0);
     font-weight: 700;
-    text-shadow: 3px 3px 6px rgb(255, 255, 255);
 }
 
 .filter{
@@ -44,7 +46,7 @@ div h2, div h3 {
 }
 
 .container{
-    padding: 50px!important;
+    padding: 50px 50px 0 !important ;
     max-width: 1750px !important;
 }
 
@@ -55,13 +57,26 @@ div h2, div h3 {
     border: none;
 }
 
-.custom-list {
+#card-list {
     overflow-y: auto;
     padding: 0;
     margin: 0;
     list-style-type: none;
-    height: 200px;
+    height: 188px;
     border: none !important;
+    width: 100%;
+    margin-top: 10px;
+}
+
+#relic-list {
+    overflow-y: auto;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    height: 140px;
+    border: none !important;
+    width: 100%;
+    margin-top: 10px;
 }
 
 .custom-list li {
@@ -86,9 +101,33 @@ div h2, div h3 {
     background-color: #e0e0e0;
 }
 
+button#add-card, button#add-relic {
+    border-radius: 16px;
+    padding: 2px 14px;
+    margin-left: 5px;
+    background-color: #FFEDA7;
+}
+
+button#add-card:disabled,
+button#add-card[disabled],
+button#add-relic:disabled,
+button#add-relic[disabled] {
+    background-color: #b1ac95;
+    color: #666;
+    cursor: not-allowed;
+}
+
+input#card0-search,input#relic0-search {
+    margin-bottom: 0;
+}
+
+.suggestion-container.suggestion-cards,
+.suggestion-container.suggestion-relics {
+    width: 100%;
+}
 
 div input{
-    margin: 10px;
+    margin: 10px 0 0 0;
 }
 
 .objects{
@@ -110,12 +149,56 @@ div input{
 }
 
 .relic-group{
-    padding-top: 40px;
+    padding-top: 30px;
 
 }
 
 .title{
     padding-bottom: 30px;
+}
+
+.abandon-run{
+    position: absolute;
+    top: 5%;
+    right: 6%;
+    border-radius: 26px;
+    padding: 10px 26px;
+    background-color: #C44E4C;
+    color: #FFEDA7;
+}
+
+li.card-item button {
+    height: 24px;
+    border-radius: 13px;
+    font-size: 16px;
+    padding: 0 6px;
+}
+
+.delete-button{
+    background-color: #C44E4C !important;
+    color: #fff;
+}
+
+.upgrade-button{
+    background-color: #67a158 !important;
+    color: #fff;
+}
+
+.delete-relic{
+    background-color: #C44E4C !important;
+    color: #fff;
+}
+
+li.relic-item button {
+    height: 24px;
+    border-radius: 13px;
+    font-size: 16px;
+    padding: 0 6px;
+}
+
+input[type=text] {
+    border-radius: 16px;
+    padding: 3px 3px 3px 10px;
 }
 
 .predict-card{
@@ -161,41 +244,71 @@ div.placeholderrelics{
 
 .relics{
     margin-top: 20px;
+    background: rgb(101 97 89 / 50%);
+    padding: 16px;
+    width: 290px;
+    border-radius: 10px;
 }
+
 .suggestion-container{
     position: relative;
     display: flex;
     flex-direction: column;
     align-items:  flex-start;
     justify-content: flex-start;
-    width: 169.069px;
-    
+    width: 54%;
 }
 
-.suggestions {
+.suggestions-card-prediction {
     position: absolute;
     top: 0;
-    background-color: rgba(0, 0, 0, 0.8);
-    border: 0px solid #ccc;
+    background-color: rgb(102 97 60);
     z-index: 1000;
     max-height: 200px;
     overflow-y: scroll;
     width: 100%;
+    border-radius: 14px;
 }
+
+.suggestions-relic-prediction {
+    position: absolute;
+    bottom: 33px;
+    background-color: rgb(102 97 60);
+    z-index: 1000;
+    max-height: 200px;
+    overflow-y: scroll;
+    width: 100%;
+    border-radius: 14px;
+}
+
 .suggestion-item {
     padding: 10px;
     cursor: pointer;
 }
+
 .suggestion-item:hover {
-    background-color: #eee;
+    background-color: #484437;
 }
 
-.prediction{
-    height: 22px;
+.prediction {
+    
+    font-size: 25px;
+    text-align: center;
 }
 
 .clear{
     margin-top: 30px;
+}
+
+.character-info{
+    margin-bottom: 50px;
+}
+
+.deck {
+    background: rgb(101 97 89 / 50%);
+    padding: 16px;
+    width: 290px;
+    border-radius: 10px;
 }
 
 .hp {
@@ -205,13 +318,25 @@ div.placeholderrelics{
     font-size: 24px; /* Tamaño del texto */
     text-align: center; /* Centrar texto */
     width: 80px; /* Ajustar ancho según necesidad */
+    margin: 0;;
+}
+
+.hp-text{
+    margin-bottom: 10px;
+}
+
+.hp-image{
+    float: left;
+    width: 50px;
+    margin-top: 14px;
+    margin-right: 14px;
 }
 
 #skip-prediction {
-    margin-top: 97px;
+    margin-top: 77px;
 }
 
 #relic-skip-prediction {
-    margin-top: 47px;
+    margin-top: 22px;
 }
 

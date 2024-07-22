@@ -10,6 +10,8 @@ body {
     background-repeat: no-repeat;
     width: 100%;
     height: 100vh;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #442f00;
 }
 
 .filter {
@@ -38,10 +40,11 @@ div.container {
 }
 
 div h1{
-  font-family: Papyrus, fantasy;
-  color: rgb(255, 208, 0);
+  font-family: "Kreon", serif;
+  color: #FFEDA7;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #442f00;
   font-weight: 700;
-  text-shadow: 3px 3px 6px rgb(0, 0, 0);
   text-align: center;
   padding-bottom: 50px; /* Mueve el título más abajo */
 }
@@ -92,9 +95,9 @@ img.card-img-top {
 }
 
 .card-title {
-  font-family: Papyrus, fantasy;
-  font-weight: 900;
-  color: rgb(255, 255, 255);
+  font-family: "Kreon", serif;
+  font-weight: 700;
+  color: #FFEDA7;
   text-shadow: 4px 4px 4px rgba(0, 0, 0, 1);
   opacity: 1; /* Oculta el texto inicialmente */
   transition: opacity 0.3s; /* Suaviza la transición */
