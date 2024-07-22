@@ -27,7 +27,7 @@ div h2, div h3 {
     font-weight: 700;
 }
 
-.negro, button, #max-hp, #entering-hp, #card-search, #choose-better-relics, #clear-relics, #choose-better-cards, #clear-cards, input{
+.negro, button, #card-search, #choose-better-relics, #clear-relics, #choose-better-cards, #clear-cards, input, button{
     font-family: Papyrus, fantasy;
     color: rgb(0, 0, 0);
     font-weight: 700;
@@ -119,7 +119,7 @@ div input{
 }
 
 .predict-card{
-    margin-top: 260px;
+    margin-top: 230px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -127,7 +127,7 @@ div input{
 }
 
 .predict-relic{
-    margin-top: 135px;
+    margin-top: 125px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -194,11 +194,24 @@ div.placeholderrelics{
     height: 22px;
 }
 
+.clear{
+    margin-top: 30px;
+}
+
+.hp {
+    background-color: transparent; /* Fondo transparente */
+    border: none; /* Sin borde */
+    color: white; /* Color del texto */
+    font-size: 24px; /* Tamaño del texto */
+    text-align: center; /* Centrar texto */
+    width: 80px; /* Ajustar ancho según necesidad */
+}
+
 #skip-prediction {
     margin-top: 97px;
 }
 
 #relic-skip-prediction {
-    margin-top: 57px;
+    margin-top: 47px;
 }
 

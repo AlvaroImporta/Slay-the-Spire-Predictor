@@ -18,8 +18,8 @@
 
                     <div class="character-info">
                         <h2 id="character-name">Character: </h2>
-                        <p>Max HP: <input type="number" id="max-hp" value="80"></p>
-                        <p>Curent HP: <input type="number" id="entering-hp" value="80"></p>
+                        <p>Total HP: <input type="number" id="max-hp" value="80" class="hp"></p>
+                        <p>Enter HP: <input type="number" id="entering-hp" value="80" class="hp"></p>
                     </div>
 
                     <div class="deck">
@@ -154,13 +154,13 @@
 
                 <div class="predict-card">
                     <button id="choose-better-cards" onclick="chooseBetterCards()">Choose better</button>
-                    <button id="clear-cards" onclick="clearCards()">Clear</button>
+                    <button id="clear-cards" class="clear" onclick="clearCards()">Clear</button>
                     <p id="skip-prediction" class="prediction">Skip: 0.0</p>
                 </div>
 
                 <div class="predict-relic">
                     <button id="choose-better-relics" onclick="chooseBetterRelics()">Choose better</button>
-                    <button id="clear-relics" onclick="clearRelics()">Clear</button>
+                    <button id="clear-relics" class="clear" onclick="clearRelics()">Clear</button>
                     <p id="relic-skip-prediction" class="prediction">Skip: 0.0</p>
                 </div>
 
