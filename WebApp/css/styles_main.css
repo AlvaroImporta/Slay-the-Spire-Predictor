@@ -398,3 +398,8 @@ img.logo-char {
     opacity: 0;
     animation: easeInOut 0.5s ease-out forwards;
 }
+
+.relic-image {
+    opacity: 0;
+    animation: easeInOut 0.5s ease-out forwards;
+}
