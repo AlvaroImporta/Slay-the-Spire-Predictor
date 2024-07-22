@@ -291,7 +291,6 @@ function chooseBetterCards() {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            type: type,
             character: GetCharacter(),
             max_hp: maxHP,
             entering_hp: enteringHP,
