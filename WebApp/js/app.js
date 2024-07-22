@@ -77,6 +77,7 @@ function LoadCharacterData() {
             li.textContent = card + '+1';
             const button = document.createElement('button');
             button.textContent = 'X';
+            button.className = "delete-button";
             button.onclick = () => {
                 card_list.removeChild(li);
             };

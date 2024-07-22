@@ -311,8 +311,14 @@ div.placeholderrelics{
     border-radius: 10px;
 }
 
+input#max-hp, input#entering-hp {
+    float: right;
+    border-radius: 16px;
+    margin-top: -5px;
+}
+
 .hp {
-    background-color: transparent; /* Fondo transparente */
+    background: rgb(101 97 89 / 50%);
     border: none; /* Sin borde */
     color: white; /* Color del texto */
     font-size: 24px; /* Tamaño del texto */
@@ -325,10 +331,19 @@ div.placeholderrelics{
     margin-bottom: 10px;
 }
 
+.estatusHP {
+    width: 74%;
+    margin-top: 20px;
+}
+
+img.logo-char {
+    margin-right: 3px;
+}
+
 .hp-image{
     float: left;
     width: 50px;
-    margin-top: 14px;
+    margin-top: 5px;
     margin-right: 14px;
 }
 
@@ -354,9 +369,32 @@ div.placeholderrelics{
     cursor: not-allowed;
 }
 
-.predict-card button,.predict-relic button {
-    border-radius: 16px;
-    background-color: #FFEDA7;
+#choose-better-cards,#choose-better-relics {
+    background-color: #67a158 !important;
+    color: #fff;
 }
 
+#choose-better-cards:disabled,#choose-better-relics:disabled {
+    background-color: #5c6958 !important;
+    color: #fff;
+}
 
+#clear-cards, #clear-relics {
+    background-color: #e1e1e1;
+}
+
+@keyframes easeInOut {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.card-image {
+    opacity: 0;
+    animation: easeInOut 0.5s ease-out forwards;
+}
