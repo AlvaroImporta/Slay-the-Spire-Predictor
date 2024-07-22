@@ -160,9 +160,9 @@ div input{
 .abandon-run{
     position: absolute;
     top: 5%;
-    right: 6%;
+    right: 6.5%;
     border-radius: 26px;
-    padding: 10px 26px;
+    padding: 7px 26px;
     background-color: #C44E4C;
     color: #FFEDA7;
 }
@@ -202,7 +202,7 @@ input[type=text] {
 }
 
 .predict-card{
-    margin-top: 230px;
+    margin-top: 11em;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -210,7 +210,7 @@ input[type=text] {
 }
 
 .predict-relic{
-    margin-top: 125px;
+    margin-top: 115px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -262,7 +262,7 @@ div.placeholderrelics{
 .suggestions-card-prediction {
     position: absolute;
     top: 0;
-    background-color: rgb(102 97 60);
+    background-color: rgb(101 96 64);
     z-index: 1000;
     max-height: 200px;
     overflow-y: scroll;
@@ -291,13 +291,13 @@ div.placeholderrelics{
 }
 
 .prediction {
-    
     font-size: 25px;
     text-align: center;
+    height: 37.5px;
 }
 
 .clear{
-    margin-top: 30px;
+    margin-top: 11px;
 }
 
 .character-info{
@@ -333,10 +333,30 @@ div.placeholderrelics{
 }
 
 #skip-prediction {
-    margin-top: 77px;
+    margin-top: 136px;
+    height: 75px;
 }
 
 #relic-skip-prediction {
-    margin-top: 22px;
+    margin-top: 28px;
+    height: 75px;
 }
+
+.predict-card button, .predict-relic button {
+    border-radius: 20px;
+    padding: 5px 9px;
+    width: 100%;
+}
+
+.predict-card button:disabled,.predict-relic button:disabled {
+    background-color: #b1ac95;
+    color: #666;
+    cursor: not-allowed;
+}
+
+.predict-card button,.predict-relic button {
+    border-radius: 16px;
+    background-color: #FFEDA7;
+}
+
 
