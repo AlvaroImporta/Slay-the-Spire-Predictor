@@ -1,0 +1,214 @@
+Ironclad: {
+'Adrenaline': 'https://static.wikia.nocookie.net/slay-the-spire/images/e/e3/Adrenaline.png',
+'After Image': 'https://static.wikia.nocookie.net/slay-the-spire/images/7/73/AfterImage.png',
+'Alpha': 'https://static.wikia.nocookie.net/slay-the-spire/images/a/a8/Alpha.png',
+'Backstab': 'https://static.wikia.nocookie.net/slay-the-spire/images/7/7a/Backstab.png',
+'Beam Cell': 'https://static.wikia.nocookie.net/slay-the-spire/images/1/19/BeamCell.png',  
+'Blade Dance': 'https://static.wikia.nocookie.net/slay-the-spire/images/5/5c/BladeDance.png',
+'Buffer': 'https://static.wikia.nocookie.net/slay-the-spire/images/5/5a/Buffer.png',
+'Chaos': 'https://static.wikia.nocookie.net/slay-the-spire/images/8/8f/Chaos.png',
+'Chill': 'https://static.wikia.nocookie.net/slay-the-spire/images/7/7b/Chill.png',
+'Cloak And Dagger': 'https://static.wikia.nocookie.net/slay-the-spire/images/3/3f/CloakAndDagger.png',
+'Core Surge': 'https://static.wikia.nocookie.net/slay-the-spire/images/4/49/CoreSurge.png',
+'Corpse Explosion': 'https://static.wikia.nocookie.net/slay-the-spire/images/2/28/CorpseExplosion.png',
+'Creative AI': 'https://static.wikia.nocookie.net/slay-the-spire/images/4/47/CreativeAI.png',            
+'Crescendo': 'https://static.wikia.nocookie.net/slay-the-spire/images/b/b1/Crescendo.png',
+'CrushJoints': 'https://static.wikia.nocookie.net/slay-the-spire/images/3/34/CrushJoints.png',
+'CultistMask': 'https://static.wikia.nocookie.net/slay-the-spire/images/a/a3/CutThroughFate.png',
+'Dagger Spray': 'https://static.wikia.nocookie.net/slay-the-spire/images/4/46/DaggerSpray.png',
+'Dash': 'https://static.wikia.nocookie.net/slay-the-spire/images/5/55/Dash.png',
+'DeceiveReality': 'https://static.wikia.nocookie.net/slay-the-spire/images/c/c5/DeceiveReality.png',
+
+'Defend_P': 'https://static.wikia.nocookie.net/slay-the-spire/images/c/cd/Defend_P.png',
+
+'Devotion': 'https://static.wikia.nocookie.net/slay-the-spire/images/4/4b/Devotion.png',
+'Doom and Gloom': 'https://static.wikia.nocookie.net/slay-the-spire/images/8/87/DoomandGloom.png',
+'Doppelganger': 'https://static.wikia.nocookie.net/slay-the-spire/images/7/75/Doppelganger.png',
+'Echo Form': 'https://static.wikia.nocookie.net/slay-the-spire/images/9/93/EchoForm.png',
+'Escape Plan': 'https://static.wikia.nocookie.net/slay-the-spire/images/b/b8/EscapePlan.png',
+'Flying Knee': 'https://static.wikia.nocookie.net/slay-the-spire/images/2/28/FlyingKnee.png',
+'Footwork': 'https://static.wikia.nocookie.net/slay-the-spire/images/8/84/Footwork.png',
+'Genetic Algorithm': 'https://static.wikia.nocookie.net/slay-the-spire/images/a/a8/GeneticAlgorithm.png',
+'Glass Knife': 'https://static.wikia.nocookie.net/slay-the-spire/images/6/62/GlassKnife.png',
+'Go for the Eyes': 'https://static.wikia.nocookie.net/slay-the-spire/images/1/1a/GofortheEyes.png',
+'Heel Hook': 'https://static.wikia.nocookie.net/slay-the-spire/images/7/75/HeelHook.png',
+'Hyperbeam': 'https://static.wikia.nocookie.net/slay-the-spire/images/f/f3/Hyperbeam.png',
+'Leg Sweep': 'https://static.wikia.nocookie.net/slay-the-spire/images/6/65/LegSweep.png',
+'Machine Learning': 'https://static.wikia.nocookie.net/slay-the-spire/images/0/03/MachineLearning.png',
+'Meditate': 'https://static.wikia.nocookie.net/slay-the-spire/images/6/61/Meditate.png',
+'Meteor Strike': 'https://static.wikia.nocookie.net/slay-the-spire/images/1/15/MeteorStrike.png',
+'Night Terror': 'https://static.wikia.nocookie.net/slay-the-spire/images/9/9b/Nightmare.png',
+'Perseverance': 'https://static.wikia.nocookie.net/slay-the-spire/images/7/7f/Perseverance.png',
+'PiercingWail': 'https://static.wikia.nocookie.net/slay-the-spire/images/0/0a/PiercingWail.png',
+'Poisoned Stab': 'https://static.wikia.nocookie.net/slay-the-spire/images/9/9e/PoisonedStab.png',
+'Predator': 'https://static.wikia.nocookie.net/slay-the-spire/images/e/e9/Predator.png',
+'Prepared': 'https://static.wikia.nocookie.net/slay-the-spire/images/8/83/Prepared.png',
+'Protect': 'https://static.wikia.nocookie.net/slay-the-spire/images/f/f6/Protect.png',
+'Ragnarok': 'https://static.wikia.nocookie.net/slay-the-spire/images/6/68/Ragnarok.png',
+'ReachHeaven': 'https://static.wikia.nocookie.net/slay-the-spire/images/8/8d/ReachHeaven.png',
+'Rebound': 'https://static.wikia.nocookie.net/slay-the-spire/images/d/d0/Rebound.png',
+'Reprogram': 'https://static.wikia.nocookie.net/slay-the-spire/images/9/9d/Reprogram.png',
+'Riddle With Holes': 'https://static.wikia.nocookie.net/slay-the-spire/images/d/d5/RiddleWithHoles.png',
+'SandsOfTime': 'https://static.wikia.nocookie.net/slay-the-spire/images/5/5c/SandsofTime.png',
+'Scrawl': 'https://static.wikia.nocookie.net/slay-the-spire/images/d/df/Scrawl.png',
+'Self Repair': 'https://static.wikia.nocookie.net/slay-the-spire/images/b/b2/SelfRepair.png',
+'SignatureMove': 'https://static.wikia.nocookie.net/slay-the-spire/images/a/a4/SignatureMove.png',
+'Skim': 'https://static.wikia.nocookie.net/slay-the-spire/images/5/55/Skim.png',
+'Slice': 'https://static.wikia.nocookie.net/slay-the-spire/images/a/ad/Slice.png',
+'Streamline': 'https://static.wikia.nocookie.net/slay-the-spire/images/6/64/Streamline.png',
+'Sucker Punch': 'https://static.wikia.nocookie.net/slay-the-spire/images/8/89/SuckerPunch.png',
+'Sweeping Beam': 'https://static.wikia.nocookie.net/slay-the-spire/images/c/ca/SweepingBeam.png',
+'Tools of the Trade': 'https://static.wikia.nocookie.net/slay-the-spire/images/d/db/ToolsoftheTrade.png',
+'WaveOfTheHand': 'https://static.wikia.nocookie.net/slay-the-spire/images/e/e7/WaveoftheHand.png',
+'White Noise': 'https://static.wikia.nocookie.net/slay-the-spire/images/2/29/WhiteNoise.png',
+'Wraith Form v2': 'https://static.wikia.nocookie.net/slay-the-spire/images/e/ec/WraithForm.png'
+}
+
+Silent: {
+'Bash': 'https://static.wikia.nocookie.net/slay-the-spire/images/d/d8/Bash.png',
+'Battle Trance': 'https://static.wikia.nocookie.net/slay-the-spire/images/3/3a/BattleTrance.png',
+'BattleHymn': 'https://static.wikia.nocookie.net/slay-the-spire/images/6/67/BattleHymn.png',
+'Blasphemy': 'https://static.wikia.nocookie.net/slay-the-spire/images/2/22/Blasphemy.png',
+'Bludgeon': 'https://static.wikia.nocookie.net/slay-the-spire/images/9/96/Bludgeon.png',
+'BowlingBash': 'https://static.wikia.nocookie.net/slay-the-spire/images/0/0c/BowlingBash.png',
+'Chill': 'https://static.wikia.nocookie.net/slay-the-spire/images/7/7b/Chill.png',
+'Clothesline': 'https://static.wikia.nocookie.net/slay-the-spire/images/8/8f/Clothesline.png',
+'Cold Snap': 'https://static.wikia.nocookie.net/slay-the-spire/images/d/dd/ColdSnap.png',
+'Core Surge': 'https://static.wikia.nocookie.net/slay-the-spire/images/4/49/CoreSurge.png',
+'CultistMask': 'https://static.wikia.nocookie.net/slay-the-spire/images/a/a3/CutThroughFate.png',
+'Echo Form': 'https://static.wikia.nocookie.net/slay-the-spire/images/9/93/EchoForm.png',
+'Evaluate': 'https://static.wikia.nocookie.net/slay-the-spire/images/5/59/Evaluate.png',
+'Evolve': 'https://static.wikia.nocookie.net/slay-the-spire/images/5/5d/Evolve.png',
+'Fasting2': 'https://static.wikia.nocookie.net/slay-the-spire/images/f/fb/Fasting.png',
+'Feel No Pain': 'https://static.wikia.nocookie.net/slay-the-spire/images/4/41/FeelNoPain.png',
+'Flame Barrier': 'https://static.wikia.nocookie.net/slay-the-spire/images/c/cc/FlameBarrier.png',
+'Flex': 'https://static.wikia.nocookie.net/slay-the-spire/images/5/5a/Flex.png',
+'FTL': 'https://static.wikia.nocookie.net/slay-the-spire/images/c/c6/FTL.png',
+'FollowUp': 'https://static.wikia.nocookie.net/slay-the-spire/images/7/72/Follow-Up.png',
+'Hyperbeam': 'https://static.wikia.nocookie.net/slay-the-spire/images/f/f3/Hyperbeam.png',
+'Impervious': 'https://static.wikia.nocookie.net/slay-the-spire/images/e/e3/Impervious.png',
+'Iron Wave': 'https://static.wikia.nocookie.net/slay-the-spire/images/9/9e/IronWave.png',
+'JustLucky': 'https://static.wikia.nocookie.net/slay-the-spire/images/6/6d/JustLucky.png',
+'Leg Sweep': 'https://static.wikia.nocookie.net/slay-the-spire/images/6/65/LegSweep.png',
+'Machine Learning': 'https://static.wikia.nocookie.net/slay-the-spire/images/0/03/MachineLearning.png',
+'Metallicize': 'https://static.wikia.nocookie.net/slay-the-spire/images/c/cd/Metallicize.png',
+'Perfected Strike': 'https://static.wikia.nocookie.net/slay-the-spire/images/7/77/PerfectedStrike.png',
+'Pommel Strike': 'https://static.wikia.nocookie.net/slay-the-spire/images/3/35/PommelStrike.png',
+'Protect': 'https://static.wikia.nocookie.net/slay-the-spire/images/f/f6/Protect.png',
+'Rage': 'https://static.wikia.nocookie.net/slay-the-spire/images/2/27/Rage.png',
+'Reboot': 'https://static.wikia.nocookie.net/slay-the-spire/images/d/de/Reboot.png',
+'Recycle': 'https://static.wikia.nocookie.net/slay-the-spire/images/7/70/Recycle.png',
+'Reprogram': 'https://static.wikia.nocookie.net/slay-the-spire/images/9/9d/Reprogram.png',
+'Swivel': 'https://static.wikia.nocookie.net/slay-the-spire/images/2/21/Swivel.png',
+'Uppercut': 'https://static.wikia.nocookie.net/slay-the-spire/images/2/27/Uppercut.png',
+'WheelKick': 'https://static.wikia.nocookie.net/slay-the-spire/images/8/86/WheelKick.png'
+}
+
+Defect: {
+'Backflip': 'https://static.wikia.nocookie.net/slay-the-spire/images/7/74/Backflip.png',
+'Barricade': 'https://static.wikia.nocookie.net/slay-the-spire/images/1/12/Barricade.png',
+'Berserk': 'https://static.wikia.nocookie.net/slay-the-spire/images/4/44/Berserk.png',
+'Blade Dance': 'https://static.wikia.nocookie.net/slay-the-spire/images/5/5c/BladeDance.png',
+'Body Slam': 'https://static.wikia.nocookie.net/slay-the-spire/images/1/10/BodySlam.png',
+'Caltrops': 'https://static.wikia.nocookie.net/slay-the-spire/images/3/31/Caltrops.png',
+'Clash': 'https://static.wikia.nocookie.net/slay-the-spire/images/f/fb/Clash.png',
+'Cleave': 'https://static.wikia.nocookie.net/slay-the-spire/images/c/c8/Cleave.png',
+'Collect': 'https://static.wikia.nocookie.net/slay-the-spire/images/8/84/Collect.png',
+'CultistMask': 'https://static.wikia.nocookie.net/slay-the-spire/images/a/a3/CutThroughFate.png',
+'Dagger Throw': 'https://static.wikia.nocookie.net/slay-the-spire/images/3/3f/R_dagger-throw.png',
+'Deadly Poison': 'https://static.wikia.nocookie.net/slay-the-spire/images/b/b7/DeadlyPoison.png',
+'Deflect': 'https://static.wikia.nocookie.net/slay-the-spire/images/2/29/Deflect.png',
+'DeusExMachina': 'https://static.wikia.nocookie.net/slay-the-spire/images/b/b6/DeusExMachina.png',
+'Distraction': 'https://static.wikia.nocookie.net/slay-the-spire/images/e/e3/Distraction.png',
+'Dodge and Roll': 'https://static.wikia.nocookie.net/slay-the-spire/images/0/09/DodgeandRoll.png',
+'Double Tap': 'https://static.wikia.nocookie.net/slay-the-spire/images/8/84/DoubleTap.png',
+'Dual Wield': 'https://static.wikia.nocookie.net/slay-the-spire/images/6/61/DualWield.png',
+'Envenom': 'https://static.wikia.nocookie.net/slay-the-spire/images/1/17/Envenom.png',
+'Establishment': 'https://static.wikia.nocookie.net/slay-the-spire/images/5/5b/Establishment.png',
+'Evaluate': 'https://static.wikia.nocookie.net/slay-the-spire/images/5/59/Evaluate.png',
+'FTL': 'https://static.wikia.nocookie.net/slay-the-spire/images/c/c6/FTL.png',
+'Flex': 'https://static.wikia.nocookie.net/slay-the-spire/images/5/5a/Flex.png',
+'Flying Knee': 'https://static.wikia.nocookie.net/slay-the-spire/images/2/28/FlyingKnee.png',
+'Headbutt': 'https://static.wikia.nocookie.net/slay-the-spire/images/1/1a/Headbutt.png',
+'Infernal Blade': 'https://static.wikia.nocookie.net/slay-the-spire/images/0/0b/InfernalBlade.png',
+'Infinite Blades': 'https://static.wikia.nocookie.net/slay-the-spire/images/c/cb/InfiniteBlades.png',
+'Iron Wave': 'https://static.wikia.nocookie.net/slay-the-spire/images/9/9e/IronWave.png',
+'Leg Sweep': 'https://static.wikia.nocookie.net/slay-the-spire/images/6/65/LegSweep.png',
+'Malaise': 'https://static.wikia.nocookie.net/slay-the-spire/images/d/d1/Malaise.png',
+'Night Terror': 'https://static.wikia.nocookie.net/slay-the-spire/images/9/9b/Nightmare.png',
+'Noxious Fumes': 'https://static.wikia.nocookie.net/slay-the-spire/images/9/9f/NoxiousFumes.png',
+'PiercingWail': 'https://static.wikia.nocookie.net/slay-the-spire/images/0/0a/PiercingWail.png',
+'Pommel Strike': 'https://static.wikia.nocookie.net/slay-the-spire/images/3/35/PommelStrike.png',
+'Protect': 'https://static.wikia.nocookie.net/slay-the-spire/images/f/f6/Protect.png',
+'Quick Slash': 'https://static.wikia.nocookie.net/slay-the-spire/images/f/f5/QuickSlash.png',
+'Skewer': 'https://static.wikia.nocookie.net/slay-the-spire/images/4/47/Skewer.png',
+'Slice': 'https://static.wikia.nocookie.net/slay-the-spire/images/a/ad/Slice.png',
+'Sucker Punch': 'https://static.wikia.nocookie.net/slay-the-spire/images/8/89/SuckerPunch.png',
+'Survivor': 'https://static.wikia.nocookie.net/slay-the-spire/images/f/fa/Survivor.png',
+'Thunderclap': 'https://static.wikia.nocookie.net/slay-the-spire/images/8/8a/Thunderclap.png',
+'True Grit': 'https://static.wikia.nocookie.net/slay-the-spire/images/4/46/TrueGrit.png'
+}
+
+Watcher:{
+'Ball Lightning': 'https://static.wikia.nocookie.net/slay-the-spire/images/b/b7/BallLightning.png',
+'Bandage Up': 'https://static.wikia.nocookie.net/slay-the-spire/images/4/4e/BandageUp.png',
+'Burst': 'https://static.wikia.nocookie.net/slay-the-spire/images/4/47/Burst.png',
+'Flex': 'https://static.wikia.nocookie.net/slay-the-spire/images/5/5a/Flex.png',
+'Genetic Algorithm': 'https://static.wikia.nocookie.net/slay-the-spire/images/a/a8/GeneticAlgorithm.png',
+'Iron Wave': 'https://static.wikia.nocookie.net/slay-the-spire/images/9/9e/IronWave.png',
+'Riddle With Holes': 'https://static.wikia.nocookie.net/slay-the-spire/images/d/d5/RiddleWithHoles.png',
+'Shrug It Off': 'https://static.wikia.nocookie.net/slay-the-spire/images/4/4a/ShrugItOff.png',
+'Stack': 'https://static.wikia.nocookie.net/slay-the-spire/images/9/9f/Stack.png'
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
