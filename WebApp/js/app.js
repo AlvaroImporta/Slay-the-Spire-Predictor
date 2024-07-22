@@ -113,8 +113,8 @@ function LoadCharacterData() {
             li.appendChild(button);
         };
 
-        li.appendChild(buttonlevel);
         li.appendChild(button);
+        li.appendChild(buttonlevel);
         card_list.appendChild(li);
     });
    
@@ -170,7 +170,6 @@ function updateCardImage(cardposition) {
     const placeholder = document.getElementById(cardposition + "-placeholder");
     const searchKey = searchInput.value.trim();
 
-    // Verifica si la carta existe en el diccionario de cartas
     if (cardImages.hasOwnProperty(searchKey)) {
         const imgSrc = cardImages[searchKey];
 
@@ -217,9 +216,9 @@ function updateRelicImage(relposition) {
     }
 }
 
-function showSuggestions(cardposition) {
-    const searchInput = document.getElementById(cardposition + "-search");
-    const suggestionsDiv = document.getElementById("suggestions-" + cardposition);
+function showSuggestions(position) {
+    const searchInput = document.getElementById(position + "-search");
+    const suggestionsDiv = document.getElementById("suggestions-" + position);
     const searchKey = searchInput.value.toLowerCase();
 
     // Limpia las sugerencias previas
@@ -228,7 +227,7 @@ function showSuggestions(cardposition) {
     // Muestra las sugerencias cartas
     if (searchKey) {
         let suggestions = [];
-        if (cardposition.includes("card")) {
+        if (position.includes("card")) {
             suggestions = Object.keys(cardImages).filter(card => card.toLowerCase().includes(searchKey));
         } else {
             suggestions = Object.keys(relicImages).filter(relic => relic.toLowerCase().includes(searchKey));
@@ -237,22 +236,22 @@ function showSuggestions(cardposition) {
             const suggestionItem = document.createElement('div');
             suggestionItem.classList.add('suggestion-item');
             suggestionItem.innerText = suggestion;
-            suggestionItem.onclick = () => selectSuggestion(suggestion, cardposition);
+            suggestionItem.onclick = () => selectSuggestion(suggestion, position);
             suggestionsDiv.appendChild(suggestionItem);
         });
     }
 }
 
 // Función para manejar la selección de una sugerencia
-function selectSuggestion(suggestion, cardposition) {
-    const searchInput = document.getElementById(cardposition + "-search");
+function selectSuggestion(suggestion, position) {
+    const searchInput = document.getElementById(position + "-search");
     searchInput.value = suggestion;
-    if (cardposition.includes("card")) {
-        updateCardImage(cardposition);
+    if (position.includes("card")) {
+        updateCardImage(position);
     } else {
-        updateRelicImage(cardposition);
+        updateRelicImage(position);
     }
-    document.getElementById("suggestions-" + cardposition).innerHTML = '';
+    document.getElementById("suggestions-" + position).innerHTML = '';
 }
 
 
@@ -358,4 +357,189 @@ function chooseBetterRelics() {
         document.getElementById('relic-skip-prediction').textContent = `Skip: ${predictions[3]}`;
     })
     .catch(error => console.error('Error:', error));
+}
+
+// desde aqui son de alejandro
+function showSuggestionsList(position) {
+    const searchInput = document.getElementById(position + "-search");
+    const suggestionsDiv = document.getElementById("suggestions-" + position);
+    const searchKey = searchInput.value.toLowerCase();
+
+    // Limpia las sugerencias previas
+    suggestionsDiv.innerHTML = '';
+
+    // Muestra las sugerencias cartas
+    if (searchKey) {
+        let suggestions = [];
+        if (position.includes("card")) {
+            const suggestions = Object.keys(cardImages).filter(card => card.toLowerCase().includes(searchKey));
+            suggestions.forEach(suggestion => {
+                const suggestionItem = document.createElement('div');
+                suggestionItem.classList.add('suggestion-item');
+                suggestionItem.innerText = suggestion;
+                suggestionItem.onclick = () => selectSuggestionListCard(suggestion, position);
+                suggestionsDiv.appendChild(suggestionItem);
+            });
+        } else {
+            suggestions = Object.keys(relicImages).filter(relic => relic.toLowerCase().includes(searchKey));
+            suggestions.forEach(suggestion => {
+                const suggestionItem = document.createElement('div');
+                suggestionItem.classList.add('suggestion-item');
+                suggestionItem.innerText = suggestion;
+                suggestionItem.onclick = () => selectSuggestionListRelic(suggestion, position);
+                suggestionsDiv.appendChild(suggestionItem);
+            });
+        }
+    }
+}
+
+// Función para manejar la selección de una sugerencia en listas
+function selectSuggestionListCard(suggestion, position) {
+    const searchInput = document.getElementById(position + "-search");
+    searchInput.value = suggestion;
+    document.getElementById("suggestions-" + position).innerHTML = '';
+
+    const cardSearch = document.getElementById('card0-search').value;
+    if (cardImages.hasOwnProperty(cardSearch)) {
+        button_add_card.disabled = false;
+    } else {
+        button_add_card.disabled = true;
+    }
+}
+
+function eneableButtonAddCard() {
+    const searchInput = document.getElementById("card0-search");
+    const searchKey = searchInput.value.trim();
+    console.log(searchKey);
+
+    if (cardImages.hasOwnProperty(searchKey)) {
+        button_add_card.disabled = false;
+    } else {
+        button_add_card.disabled = true;
+    }
+}
+
+// Función para añadir una carta a la lista
+function addCardToList() {
+    const cardList = document.getElementById('card-list');
+    const cardSearch = document.getElementById('card0-search').value;
+
+    // Crear un nuevo elemento de lista para la carta
+    const li = document.createElement('li');
+    li.textContent = cardSearch;
+    li.className = 'card-item';
+
+    // Crear el botón para eliminar la carta
+    const removeButton = document.createElement('button');
+    removeButton.textContent = 'X';
+    removeButton.className = "delete";
+    removeButton.onclick = () => {
+        cardList.removeChild(li);
+    };
+
+    // Crear el botón para subir el nivel de la carta
+    const levelUpButton = document.createElement('button');
+    levelUpButton.textContent = '↑';
+    levelUpButton.className = "upgrade";
+    levelUpButton.onclick = () => {
+        li.textContent = cardSearch + '+1';
+        const button = document.createElement('button');
+        button.textContent = 'X';
+        button.className = "delete";
+        button.onclick = () => {
+            cardList.removeChild(li);
+        };
+        li.appendChild(button);
+    };
+
+    // Añadir los botones al elemento de lista
+    li.appendChild(removeButton);
+    li.appendChild(levelUpButton);
+
+    // Añadir el nuevo elemento de lista a la lista de cartas
+    cardList.appendChild(li);
+    document.getElementById('card0-search').value = ""
+    button_add_card.disabled = true;
+    document.getElementById('suggestions-card0').innerHTML = '';
+
+}
+
+
+// Función para manejar la selección de una sugerencia en listas
+function selectSuggestionListRelic(suggestion, position) {
+    const searchInput = document.getElementById(position + "-search");
+    searchInput.value = suggestion;
+    document.getElementById("suggestions-" + position).innerHTML = '';
+
+    const relicList = document.getElementById('relic-list');
+    const searchKey = searchInput.value.trim();
+    // Obtén todos los elementos LI dentro del UL
+    const elementosLi = relicList.getElementsByTagName('li');
+
+    // Convierte el HTMLCollection a un Array
+    const listaArray = Array.from(elementosLi);
+
+    // Extrae el texto limpio de cada elemento <li> (sin el contenido del botón)
+    const listaTextos = listaArray.map(li => {
+        // Extrae el texto del elemento <li> y elimina cualquier texto de botones u otros elementos
+        return li.childNodes[0].textContent.trim();
+    });
+
+    if (relicImages.hasOwnProperty(searchKey) && !listaTextos.includes(searchKey)) {
+        button_add_relic.disabled = false;
+    } else {
+        button_add_relic.disabled = true;
+    }
+}
+
+function eneableButtonAddRelic() {
+    const searchInput = document.getElementById("relic0-search");
+    const relicList = document.getElementById('relic-list');
+    const searchKey = searchInput.value.trim();
+
+    // Obtén todos los elementos LI dentro del UL
+    const elementosLi = relicList.getElementsByTagName('li');
+
+    // Convierte el HTMLCollection a un Array
+    const listaArray = Array.from(elementosLi);
+
+    // Extrae el texto limpio de cada elemento <li> (sin el contenido del botón)
+    const listaTextos = listaArray.map(li => {
+        // Extrae el texto del elemento <li> y elimina cualquier texto de botones u otros elementos
+        return li.childNodes[0].textContent.trim();
+    });
+
+    if (relicImages.hasOwnProperty(searchKey) && !listaTextos.includes(searchKey)) {
+        button_add_relic.disabled = false;
+    } else {
+        button_add_relic.disabled = true;
+    }
+}
+
+// Función para añadir una carta a la lista
+function addRelicToList() {
+    const relicList = document.getElementById('relic-list');
+    const relicSearch = document.getElementById('relic0-search').value;
+
+    // Crear un nuevo elemento de lista para la carta
+    const li = document.createElement('li');
+    li.textContent = relicSearch;
+    li.className = 'relic-item';
+
+    const button = document.createElement('button');
+    button.textContent = 'X';
+    button.className = "delete";
+    button.onclick = () => {
+        relicList.removeChild(li);
+    };
+
+    // Añadir los botones al elemento de lista
+    li.appendChild(button);
+
+    // Añadir el nuevo elemento de lista a la lista de cartas
+    relicList.appendChild(li);
+    document.getElementById('relic0-search').value = ""
+    button_add_relic.disabled = true;
+    document.getElementById('suggestions-relic0').innerHTML = '';
+
 }
