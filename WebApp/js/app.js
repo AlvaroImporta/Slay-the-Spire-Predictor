@@ -40,12 +40,14 @@ function clearCards() {
     document.getElementById('card1-container').innerHTML = initialHTML.card1;
     document.getElementById('card2-container').innerHTML = initialHTML.card2;
     document.getElementById('card3-container').innerHTML = initialHTML.card3;
+    document.getElementById('skip-prediction').innerHTML = '';
 }
 
 function clearRelics(){
     document.getElementById('relic1-container').innerHTML = initialHTML.relic1;
     document.getElementById('relic2-container').innerHTML = initialHTML.relic2;
     document.getElementById('relic3-container').innerHTML = initialHTML.relic3;
+    document.getElementById('relic-skip-prediction').innerHTML = '';
 }
 
 function LoadCharacterData() {
@@ -295,13 +297,14 @@ function chooseBetterCards() {
     })
     .then(response => response.json())
     .then(predictions => {
-        document.getElementById('card1-prediction').textContent = predictions[0];
-        document.getElementById('card2-prediction').textContent = predictions[1];
-        document.getElementById('card3-prediction').textContent = predictions[2];
-        document.getElementById('skip-prediction').textContent = `Skip: ${predictions[3]}`;
+        document.getElementById('card1-prediction').innerHTML = (predictions[0]/21).toFixed(3) + ' GWI';
+        document.getElementById('card2-prediction').innerHTML = (predictions[1]/21).toFixed(3) + ' GWI';
+        document.getElementById('card3-prediction').innerHTML = (predictions[2]/21).toFixed(3) + ' GWI';
+        document.getElementById('skip-prediction').innerHTML = `Skip: <br>${(predictions[3]/21).toFixed(3)} GWI`;
     })
     .catch(error => console.error('Error:', error));
 }
+
 
 function chooseBetterRelics() {
     const maxHP = document.getElementById('max-hp').value;
@@ -347,13 +350,14 @@ function chooseBetterRelics() {
     })
     .then(response => response.json())
     .then(predictions => {
-        document.getElementById('relic1-prediction').textContent = predictions[0];
-        document.getElementById('relic2-prediction').textContent = predictions[1];
-        document.getElementById('relic3-prediction').textContent = predictions[2];
-        document.getElementById('relic-skip-prediction').textContent = `Skip: ${predictions[3]}`;
+        document.getElementById('relic1-prediction').textContent = (predictions[0]/21).toFixed(3) + ' GWI';
+        document.getElementById('relic2-prediction').textContent = (predictions[1]/21).toFixed(3) + ' GWI';
+        document.getElementById('relic3-prediction').textContent = (predictions[2]/21).toFixed(3) + ' GWI';
+        document.getElementById('relic-skip-prediction').innerHTML = `Skip: <br>${(predictions[3]/21).toFixed(3)} GWI`;
     })
     .catch(error => console.error('Error:', error));
 }
+
 
 // desde aqui son de alejandro
 function showSuggestionsList(position) {

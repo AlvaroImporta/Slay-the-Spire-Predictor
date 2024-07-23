@@ -377,7 +377,7 @@ const characters_dict = {
         'max_hp': 75,
         'model': 'extra_trees_watcher.pkl',
         'initial_cards': ['Strike_P','Strike_P','Strike_P','Strike_P','Defend_P','Defend_P','Defend_P','Defend_P','Eruption', 'Vigilance','AscendersBane'],
-        'initial_relic': 'Pure Water',
+        'initial_relic': 'PureWater',
         'cards': {'Alpha': 'https://static.wikia.nocookie.net/slay-the-spire/images/a/a8/Alpha.png',
             'Apotheosis': 'https://static.wikia.nocookie.net/slay-the-spire/images/9/93/Apotheosis.png',
             'AscendersBane': 'https://static.wikia.nocookie.net/slay-the-spire/images/a/a0/Ascender%27s_Bane.png',
