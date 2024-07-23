@@ -54,7 +54,7 @@ def predict():
             for key, value in counter.items():
                 if key in df.columns:
                     df.at[index, key] = value
-
+        
             # Hacer la predicción
             prediction = model.predict(df.iloc[[index]])
             predictions.append(prediction.tolist())
