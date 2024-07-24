@@ -1,4 +1,5 @@
 
+*.pkl
 *.csv
 imagenes_cartas
 imagenes_reliquias
